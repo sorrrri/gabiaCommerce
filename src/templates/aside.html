@@ -1,0 +1,112 @@
+{% macro active(currentPage = 'index') %}
+<aside class="aside">
+  <div class="buttons">
+    <a href="index.html" class="logo"></a>
+    <button class="aside-handler">
+      <svg viewBox="0 0 100 100" width="80">
+        <path d="m 30,33 h 40 c 0,0 8.5,-0.68551 8.5,10.375 0,8.292653 -6.122707,9.002293 -8.5,6.625 l -11.071429,-11.071429" />
+        <path d="m 70,50 h -40" />
+        <path d="m 30,67 h 40 c 0,0 8.5,0.68551 8.5,-10.375 0,-8.292653 -6.122707,-9.002293 -8.5,-6.625 l -11.071429,11.071429" />
+      </svg>
+    </button>
+  </div>
+  <nav>
+    <div class="{% if currentPage == 'tracking' %}is-active{% endif %} {% if currentPage == 'sales' %}is-active{% endif %} {% if currentPage == 'ranking' %}is-active{% endif %} {% if currentPage == 'lowestPrice' %}is-active{% endif %}">
+      <menu>
+        <i class="ico-ranking"></i>
+        <span onclick="location.href='tracking.html'">스토어</span>
+      </menu>
+      <ul>
+        <li class="gmarket {% if currentPage == 'sales' %}is-active{% endif %}">
+          <span onclick="location.href='track_gmarket.html'">지마켓 판매량 추적</span>
+        </li>
+        <li class="naver {% if currentPage == 'ranking' %}is-active{% endif %}">
+          <span onclick="location.href='ranking.html'">네이버 순위 추적</span>
+        </li>
+        <li class="naver {% if currentPage == 'lowestPrice' %}is-active{% endif %}">
+          <span onclick="location.href='lowest_price.html'">네이버 최저가 추적</span>
+        </li>
+      </ul>
+    </div>
+    <div class="{% if currentPage == 'bidding' %}is-active{% endif %} {% if currentPage == 'bidNaver' %}is-active{% endif %} {% if currentPage == 'bid11st' %}is-active{% endif %} {% if currentPage == 'bidGmarket' %}is-active{% endif %} {% if currentPage == 'bidGoogle' %}is-active{% endif %}">
+      <menu>
+        <i class="ico-price"></i>
+        <span onclick="location.href='bidding.html'">자동입찰</span>
+      </menu>
+      <ul>
+        <li class="naver {% if currentPage == 'bidNaver' %}is-active{% endif %}">
+          <span onclick="location.href='bid_naver.html'">네이버</span>
+        </li>
+        <li class="eleventh {% if currentPage == 'bid11st' %}is-active{% endif %}">
+          <span onclick="location.href='bid_11st.html'">11번가</span>
+        </li>
+        <li class="gmarket {% if currentPage == 'bidGmarket' %}is-active{% endif %}">
+          <span onclick="location.href='bid_gmarket.html'">지마켓 파워클릭</span>
+        </li>
+        <li class="google {% if currentPage == 'bidGoogle' %}is-active{% endif %}">
+          <span onclick="location.href='bid_google.html'">구글 검색광고</span>
+        </li>
+      </ul>
+    </div>
+    <div class="{% if currentPage == 'keyword' %}is-active{% endif %}">
+      <menu>
+        <i class="ico-trend"></i>
+        <span onclick="location.href='keyword.html'">키워드 분석</span>
+      </menu>
+    </div>
+    <div>
+      <menu>
+        <i class="ico-calendar"></i>
+        <span onclick="location.href='calendar.html'">다이애드 캘린더</span>
+      </menu>
+    </div>
+    <div>
+      <menu>
+        <i class="ico-ranking"></i>
+        <span class="ico-link" onclick="window.open('https://blog.diad.co.kr/manual')">다이애드 매뉴얼</span>
+      </menu>
+    </div>
+    <div style="display: none;">
+      <menu>
+        <i class="ico-ranking"></i>
+        <span>다이애드 +</span>
+      </menu>
+      <ul>
+        <li>
+          <span>다이애드 캘린더</span>
+        </li>
+        <li>
+          <span onclick="window.open('https://blog.diad.co.kr/manual')">다이애드 매뉴얼</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <nav style="display: none;">
+    <a class="{% if currentPage == 'ranking' %}is-active{% endif %}" href="ranking.html">
+      <i class="ico-ranking"></i>
+      <span>상품 순위 추적</span>
+    </a>
+    <a class="{% if currentPage == 'lowestPrice' %}is-active{% endif %}" href="lowest_price.html">
+      <i class="ico-price"></i>
+      <span>최저가 알림</span>
+    </a>
+    <a class="{% if currentPage == 'keyword' %}is-active{% endif %}" href="keyword.html">
+      <i class="ico-trend"></i>
+      <span>키워드 트렌드</span>
+    </a>
+    <a class="{% if currentPage == 'settings' %}is-active{% endif %}" href="settings.html">
+      <i class="ico-alarm"></i>
+      <span>알림설정</span>
+    </a>
+  </nav>
+  <ul class="account">
+    <li>
+      <button class="username" title="계정설정">coralcat</button>
+    </li>
+    <li>
+      <button class="ico-cog" title="알람설정"></button>
+      <button>logout</button>
+    </li>
+  </ul>
+</aside>
+{% endmacro %}
