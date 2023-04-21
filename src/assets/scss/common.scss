@@ -33,8 +33,7 @@
   src: url("../fonts/NanumSquareNeoOTF-dEb.otf") format("opentype");
 }
 
-$main-color: #5048d7;
-$primary-color: #7682f8;
+$primary-color: #5048d7;
 $secondary-color: #f2f1ff;
 
 $input-height: 45px;
@@ -54,7 +53,7 @@ html {
 
 body {
   overflow: hidden;
-  color: #333;
+  color: black;
   width: 100%;
   letter-spacing: -1px;
   font: 17px/1 "RobotoM", "NotoSansM";
@@ -76,8 +75,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    line-height: 1.25;
-    gap: 5px;
+    line-height: 1.5;
     word-break: keep-all;
     font-weight: normal;
   }
@@ -89,8 +87,9 @@ body {
   }
 
   h2 {
-    font-family: "NotoSansM";
-    font-size: clamp(28px, 3vw, 32px);
+    font-family: "NotoSansR";
+    font-weight: bold;
+    font-size: clamp(32px, 3vw, 40px);
   }
 
   h3 {
@@ -110,12 +109,11 @@ body {
   }
 
   p {
-    line-height: 1.5;
+    font-size: 20px;
     word-break: keep-all;
 
     span {
       display: block;
-      line-height: 1;
     }
   }
 
@@ -144,23 +142,6 @@ body {
     &:is(:hover, :focus, .active) {
       outline: none;
       text-decoration: none;
-    }
-
-    &.arrow {
-      display: flex;
-      align-items: center;
-      gap: 3px;
-
-      &::after {
-        content: "";
-        border: 0;
-        border-top: 1px solid #333;
-        border-right: 1px solid #333;
-        transform: rotate(45deg);
-        width: 8px;
-        height: 8px;
-        display: inline-block;
-      }
     }
   }
 
@@ -362,7 +343,15 @@ ul {
   z-index: 50 !important;
 }
 
+.images {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
 .image {
+  flex: 0 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -374,7 +363,7 @@ ul {
   align-items: flex-start;
   gap: 1rem;
 
-  * {
+  > * {
     align-items: flex-start;
   }
 }
@@ -401,7 +390,8 @@ ul {
 
 .wrapper {
   margin: 0 auto;
-  width: 1168px;
+  width: 1180px;
+  position: relative;
 }
 
 /* =====================================================
@@ -552,7 +542,7 @@ header {
           left: 50%;
           width: 0;
           height: 2px;
-          background-color: $main-color;
+          background-color: $primary-color;
           transform: translateX(-50%);
           transition: 0.25s;
         }
@@ -608,6 +598,22 @@ main {
           :nth-child(5) {
             animation-delay: 1.2s;
           }
+
+          :nth-child(6) {
+            animation-delay: 1.5s;
+          }
+
+          :nth-child(7) {
+            animation-delay: 1.8s;
+          }
+
+          :nth-child(8) {
+            animation-delay: 2.1s;
+          }
+
+          :nth-child(9) {
+            animation-delay: 2.4s;
+          }
         }
       }
     }
@@ -629,7 +635,7 @@ main {
       p {
         display: flex;
         flex-direction: column;
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.5;
         text-align: center;
       }
@@ -649,7 +655,7 @@ main {
             content: "";
             position: absolute;
             height: 2px;
-            background-color: $main-color;
+            background-color: $primary-color;
             width: 0;
             display: block;
             left: 50%;
@@ -712,7 +718,8 @@ footer {
 
   .sitemap {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4rem;
 
     li {
       display: flex;
@@ -794,7 +801,7 @@ progress {
   }
   &::-webkit-progress-value {
     border-radius: 0.5rem;
-    background-color: $main-color;
+    background-color: $primary-color;
     transition: width 1s;
   }
 }
@@ -924,8 +931,8 @@ progress {
       + label {
         &::before {
           content: "";
-          background: $main-color;
-          border-color: $main-color;
+          background: $primary-color;
+          border-color: $primary-color;
         }
 
         &::after {
@@ -1018,7 +1025,7 @@ progress {
     position: absolute;
     top: 50%;
     left: 3px;
-    stroke: $main-color;
+    stroke: $primary-color;
     fill: none;
     stroke-width: 1.5;
     stroke-dasharray: 30 30;
@@ -1211,7 +1218,7 @@ input[type="radio"] {
 
     &:hover,
     &.is-active {
-      color: $main-color;
+      color: $primary-color;
     }
   }
 }
@@ -1278,7 +1285,7 @@ input[type="radio"] {
 
     &:checked {
       + label {
-        background-color: $main-color;
+        background-color: $primary-color;
         z-index: 2 !important;
 
         &::before {
@@ -1417,9 +1424,9 @@ input[type="radio"] {
 
       .btn-submit,
       .btn-main {
-        background-color: $main-color;
+        background-color: $primary-color;
         color: #fff;
-        box-shadow: 0 3px 9px -4px $main-color;
+        box-shadow: 0 3px 9px -4px $primary-color;
       }
 
       .btn-cancel {
@@ -1788,7 +1795,7 @@ input[type="radio"] {
 }
 .swiper {
   .wrapper {
-    min-height: 400px;
+    min-height: 480px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -1997,11 +2004,11 @@ input[type="radio"] {
 
 .marquee {
   overflow: hidden;
-  --offset: 35vw;
+  --offset: 45vw;
   --move-initial: calc(-50% + var(--offset));
   --move-final: calc(-25% + var(--offset));
 
-  &__inner {
+  &-wrapper {
     white-space: nowrap;
     width: fit-content;
     display: flex;

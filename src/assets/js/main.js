@@ -1,3 +1,5 @@
+/** @format */
+
 document.addEventListener("DOMContentLoaded", () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -22,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (currentScrollTop > 50) {
         if (currentScrollTop > lastScrollTop) {
           scrollToTop.classList.remove("is-active");
-          header.style.top = `-${header.offsetHeight}px`
+          header.style.top = `-${header.offsetHeight}px`;
         } else {
           scrollToTop.classList.add("is-active");
-          header.style.top = '0'
+          header.style.top = "0";
         }
         lastScrollTop = currentScrollTop;
       } else {
@@ -58,8 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const tooltips = document.querySelectorAll(".tooltip");
   if (matchMedia("screen and (max-width: 640px)").matches) {
-    tooltips.forEach(tooltip => {
-      tooltip.addEventListener("click", event => {
+    tooltips.forEach((tooltip) => {
+      tooltip.addEventListener("click", (event) => {
         tooltip.classList.toggle("is-active");
         const content = tooltip.querySelector(".tooltip-content");
         content.style.top = `${event.clientY}px`;
@@ -69,8 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const easyTooltips = document.querySelectorAll("[data-tooltip]");
   if (easyTooltips[0]) {
-    easyTooltips.forEach(tooltip => {
-      tooltip.addEventListener("mouseover", event => {
+    easyTooltips.forEach((tooltip) => {
+      tooltip.addEventListener("mouseover", (event) => {
         event.preventDefault();
         event.stopPropagation();
         event.target.parentElement.style.zIndex = "5";
@@ -84,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 상품 최저가 리포트: 일별 최저가 차트 클릭시
   const anchors = document.querySelectorAll("a[href^='#']");
   if (anchors[0]) {
-    anchors.forEach(anchor => {
+    anchors.forEach((anchor) => {
       anchor.addEventListener("click", () => {
         anchor.getAttribute("href").scrollIntoView({
           behavior: "smooth",
@@ -98,8 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
   ===================================================== */
   // 인풋창에 "x"표시 있을시 clear value
   const inputs = document.querySelectorAll(".input input");
-  inputs.forEach(input => {
-    input.addEventListener("keyup", event => {
+  inputs.forEach((input) => {
+    input.addEventListener("keyup", (event) => {
       const { target } = event;
       const container = target.closest(".input");
       const clear = container.querySelector(".x");
@@ -118,18 +120,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".tabs li");
   const tabContents = document.querySelectorAll(".tab-content");
 
-  const showTabContent = event => {
+  const showTabContent = (event) => {
     event.stopPropagation();
     const tabName = event.target.dataset.tab;
     const tabs = document.querySelectorAll(`[data-tab='${tabName}']`);
     const tabContents = document.querySelectorAll(`.tab-content[data-tab='${tabName}']`);
     let menuIndex = [...tabs].indexOf(event.target);
 
-    tabs.forEach(tab => {
+    tabs.forEach((tab) => {
       [...tabs].indexOf(tab) === menuIndex ? tab.classList.add("is-active") : tab.classList.remove("is-active");
     });
 
-    tabContents.forEach(content => {
+    tabContents.forEach((content) => {
       [...tabContents].indexOf(content) === 0 && content.classList.add("is-active");
       [...tabContents].indexOf(content) === menuIndex
         ? content.classList.add("is-active")
@@ -137,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  tabs.forEach(tab => {
+  tabs.forEach((tab) => {
     [...tabs][0].classList.add("is-active");
     [...tabContents][0].classList.add("is-active");
     tab.addEventListener("click", showTabContent);
@@ -148,8 +150,8 @@ document.addEventListener("DOMContentLoaded", () => {
   ===================================================== */
   const toggles = document.querySelectorAll(".toggle");
   if (toggles) {
-    toggles.forEach(toggle => {
-      toggle.addEventListener("click", event => {
+    toggles.forEach((toggle) => {
+      toggle.addEventListener("click", (event) => {
         const button = event.target;
         button.classList.toggle("is-active");
       });
@@ -160,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
        Checkbox: Check All
   ===================================================== */
 
-  document.querySelectorAll(".checkbox").forEach(checkbox => {
+  document.querySelectorAll(".checkbox").forEach((checkbox) => {
     checkbox.innerHTML += `
     <svg width="15px" height="10px">
       <polyline points="1,5 6,9 14,1"></polyline>
@@ -169,11 +171,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   const checkAll = document.querySelectorAll(".check-all");
   if (checkAll) {
-    checkAll.forEach(all => {
-      const handleCheckAll = event => {
+    checkAll.forEach((all) => {
+      const handleCheckAll = (event) => {
         const inputName = event.target.getAttribute("name");
         const checkboxes = document.getElementsByName(inputName);
-        checkboxes.forEach(checkbox => {
+        checkboxes.forEach((checkbox) => {
           checkbox.checked = all.checked;
 
           const controller = checkbox.classList.contains("check-all");
@@ -186,61 +188,68 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
   /* =====================================================
    Accordion
   ===================================================== */
   const questions = document.querySelector(".accordion");
   if (questions) {
-    const questions = document.querySelectorAll(".question")
+    const questions = document.querySelectorAll(".question");
     const showLists = (event) => {
-      console.log("YAY")
+      console.log("YAY");
       let questionIndex = [...questions].indexOf(event.target);
-      questions.forEach(question => {
+      questions.forEach((question) => {
         const list = question.closest("li");
         [...questions].indexOf(question) === questionIndex
           ? list.classList.toggle("is-active")
           : list.classList.remove("is-active");
       });
-    }
-    questions.forEach(question => {
+    };
+    questions.forEach((question) => {
       question.addEventListener("click", showLists);
-    })
-  };
+    });
+  }
 
   // Pause Marquee Elements
   const marquees = document.querySelectorAll(".marquee-wrapper");
-  marquees.forEach(marquee => {
+  marquees.forEach((marquee) => {
     marquee.addEventListener("mouseenter", (event) => {
-      event.target.style.animationPlayState = "paused"
-    })
+      event.target.style.animationPlayState = "paused";
+    });
 
     marquee.addEventListener("mouseout", (event) => {
-      const wrapper = event.target.classList.contains(".marquee-wrapper") || event.target.closest(".marquee-wrapper")
-      wrapper.style.animationPlayState = "running"
-    })
-  })
+      const wrapper = event.target.classList.contains(".marquee-wrapper") || event.target.closest(".marquee-wrapper");
+      wrapper.style.animationPlayState = "running";
+    });
+  });
 
-  // main
-  if (main.classList.contains("content-main")) {
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.intersectionRatio > 0) {
-          entry.target.classList.add("is-active")
+  // interactive
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.intersectionRatio > 0) {
+        entry.target.classList.add("is-active");
 
-          if (entry.target.classList.contains("section_gradient")) {
-            const images = entry.target.querySelectorAll("img");
-            images.forEach(img => {})
-          }
-        } else {
-          entry.target.classList.remove("is-active")
+        if (entry.target.classList.contains("section_gradient")) {
+          const images = entry.target.querySelectorAll("img");
+          images.forEach((img) => {});
         }
-      })
-    })
+      } else {
+        entry.target.classList.remove("is-active");
+      }
+    });
+  });
 
-    const sections = document.querySelectorAll("main.interactive section");
-    sections.forEach(section => {
-      io.observe(section)
-    })
-  }
+  const sections = document.querySelectorAll("main.interactive section");
+  sections.forEach((section) => {
+    io.observe(section);
+  });
+
+
+  const button = document.querySelector(".section-sticky-button button")
+  container.addEventListener("scroll", () => {
+    if (container.scrollTop > 50) {
+      button.classList.add("is-active")
+    } else {
+      button.classList.remove("is-active")
+    }
+  })
 });
