@@ -146,17 +146,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =====================================================
-       Toggle
-  ===================================================== */
-  const toggles = document.querySelectorAll(".toggle");
-  if (toggles) {
+         Toggle
+    ===================================================== */
+  const toggles = document.querySelectorAll("[data-toggle]");
+  const showToggleContent = (event) => {
+    event.stopPropagation();
+    const toggleName = event.target.dataset.toggle || event.target.closest("[data-toggle]").dataset.toggle;
+    const toggles = document.querySelectorAll(`[data-toggle='${toggleName}']`);
+
     toggles.forEach((toggle) => {
-      toggle.addEventListener("click", (event) => {
-        const button = event.target;
-        button.classList.toggle("is-active");
-      });
+      toggle.classList.contains("is-active") ? toggle.classList.remove("is-active") : toggle.classList.add("is-active");
     });
-  }
+  };
+
+  toggles.forEach((toggle) => {
+    toggle.addEventListener("click", showToggleContent);
+  });
 
   /* =====================================================
        Checkbox: Check All
@@ -242,13 +247,13 @@ document.addEventListener("DOMContentLoaded", () => {
     io.observe(section);
   });
 
-
-  const button = document.querySelector(".section-sticky-button button")
-  button && container.addEventListener("scroll", () => {
-    if (container.scrollTop > 50) {
-      button.classList.add("is-active")
-    } else {
-      button.classList.remove("is-active")
-    }
-  })
+  const button = document.querySelector(".section-sticky-button button");
+  button &&
+    container.addEventListener("scroll", () => {
+      if (container.scrollTop > 50) {
+        button.classList.add("is-active");
+      } else {
+        button.classList.remove("is-active");
+      }
+    });
 });

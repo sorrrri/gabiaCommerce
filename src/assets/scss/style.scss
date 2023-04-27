@@ -203,8 +203,8 @@ footer {
 .section-sticky-button {
   padding: 0;
   position: sticky;
-  bottom: 8rem;
-  margin-top: -8rem;
+  bottom: 7rem;
+  margin-top: -6rem;
   height: 0;
   display: flex;
   justify-content: center;
@@ -240,13 +240,14 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    max-width: 980px;
 
     li {
       background-color: #f4f4f4;
       position: relative;
       display: flex;
       flex-direction: column;
-      padding-bottom: 1.5rem;
+      padding: 1.5rem;
       border-radius: 0.5rem;
       transition: background-color 0.25s;
       overflow: hidden;
@@ -265,7 +266,7 @@ footer {
           opacity: 1;
           visibility: visible;
           max-height: 999px;
-          padding: 1.5rem 2rem 1.25rem;
+          padding: .5rem 1.5rem 0
         }
       }
     }
@@ -273,8 +274,7 @@ footer {
     .question {
       display: flex;
       align-items: center;
-      padding: 1.5rem 0.5rem 0 1rem;
-      font-size: clamp(15px, 2vw, 20px);
+      font-size: clamp(17px, 2vw, 20px);
       transition: color 0.25s;
       cursor: pointer;
 
@@ -304,8 +304,7 @@ footer {
       opacity: 0;
       visibility: hidden;
       max-height: 0;
-      padding: 0 2rem;
-      font-size: clamp(16px, 2vw, 18px);
+      padding: 0 1.5rem;
       color: #777;
       transition: 0.25s;
       display: flex;
@@ -320,6 +319,7 @@ footer {
       a {
         font-size: clamp(14px, 2vw, 16px);
         color: $secondary-color;
+        margin-top: 1rem;
 
         &::after {
           content: "";
@@ -335,9 +335,10 @@ footer {
       }
 
       p {
-        font-size: clamp(14px, 2vw, 18px);
+        font-size: clamp(16px, 2vw, 18px);
         flex-direction: row;
-        gap: 2rem
+        gap: 2rem;
+        text-align: left;
       }
     }
   }
@@ -1669,7 +1670,6 @@ footer {
       }
 
       h3 {
-        line-height: 2;
         margin-top: 0.75rem;
       }
 
@@ -1679,7 +1679,7 @@ footer {
 
         li {
           flex: 0 0 auto;
-          width: min(220px, 100%);
+          width: min(220px, 45%);
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -1730,7 +1730,7 @@ footer {
         justify-content: space-between;
       }
 
-      .images {
+      .image {
         margin-left: -9vw;
       }
 
@@ -1747,7 +1747,7 @@ footer {
 
     .section-sticky-button {
       button {
-        font-size: 24px;
+        font-size: clamp(20px, 2vw, 24px);
         background: linear-gradient(92.06deg, #0063fd 0%, #288dff 23.44%, #3399ff 48.96%, #2582f2 66.67%, #0042cf 100%);
       }
     }
@@ -1890,6 +1890,14 @@ footer {
     .section-payments {
       background-color: #3399ff;
 
+      header {
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem
+      }
+
       p {
         font-size: clamp(17px, 2vw, 18px);
 
@@ -1903,6 +1911,8 @@ footer {
       }
 
       h3 {
+        margin-top: .5rem;
+        
         :first-of-type {
           color: black;
           font-size: clamp(20px, 2vw, 24px);
@@ -1912,11 +1922,6 @@ footer {
           color: #0042cf;
           font-size: clamp(24px, 2.5vw, 34px);
         }
-      }
-
-      header {
-        width: 100%;
-        align-items: flex-start;
       }
 
       li {
@@ -2237,7 +2242,7 @@ footer {
 
         h3 {
           color: $secondary-color;
-          font-size: clamp(17px, 2vw, 24px);
+          font-size: clamp(22px, 4vw, 24px);
           margin-bottom: 0;
         }
 
