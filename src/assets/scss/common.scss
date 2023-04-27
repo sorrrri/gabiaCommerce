@@ -1,36 +1,11 @@
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
-}
+/** @format */
 
 @font-face {
-  font-family: "RobotoM";
-  src: url("../fonts/Roboto-Medium.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "NotoSansL";
-  src: url("../fonts/NotoSansKR-Light.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "NotoSansR";
-  src: url("../fonts/NotoSansKR-Regular.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "NotoSansM";
-  src: url("../fonts/NotoSansKR-Medium.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "NotoSansB";
-  src: url("../fonts/NotoSansKR-Bold.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "NanumSquareEB";
-  src: url("../fonts/NanumSquareNeoOTF-dEb.otf") format("opentype");
+  font-family: "Pretendard";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: local("Pretendard"), url("../fonts/Pretendard.woff2") format("woff2-variations");
 }
 
 $primary-color: #5048d7;
@@ -56,129 +31,126 @@ body {
   color: black;
   width: 100%;
   letter-spacing: -1px;
-  font: 17px/1 "RobotoM", "NotoSansM";
+  font: 600 17px/1 "Pretendard";
+}
 
-  ul {
-    display: flex;
-    gap: 1rem;
+ul {
+  display: flex;
+  gap: 1rem;
 
-    img {
-      max-width: 100%;
-    }
+  img {
+    max-width: 100%;
   }
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  p {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    line-height: 1.5;
-    word-break: keep-all;
-    font-weight: normal;
+h1,
+h2,
+h3,
+h4,
+p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.5;
+  word-break: keep-all;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(28px, 2.15vw, 32px);
+  align-items: flex-start;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.35;
+}
+
+h3 {
+  font-size: clamp(17px, 2vw, 20px);
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+strong {
+  font-weight: 600;
+}
+
+p {
+  font-size: clamp(17px, 2vw, 20px);
+  word-break: keep-all;
+
+  span {
+    display: block;
   }
+}
 
-  h1 {
-    font-family: "NotoSansB";
-    font-size: clamp(28px, 2.15vw, 32px);
-    align-items: flex-start;
-  }
+small {
+  font-size: 13px;
+  line-height: 1.25;
+  display: inline-flex;
+  font-family: "Pretendard";
+}
 
-  h2 {
-    font-family: "NotoSansR";
-    font-weight: bold;
-    font-size: clamp(32px, 3vw, 40px);
-  }
+address {
+  font-style: normal;
+}
 
-  h3 {
-    font-family: "NotoSansM";
-    font-size: clamp(17px, 2vw, 20px);
-  }
+:is(h1, h2, h3, h4, h5, p) {
+  margin: 0;
+}
 
-  h5 {
-    font-size: 14px;
-    font-weight: normal;
-    font-family: "RobotoM", "NotoSansM";
-  }
+a {
+  text-decoration: none;
+  color: #333;
+  display: inline-flex;
+  align-items: center;
+  transition: 0.4s;
 
-  strong {
-    font-weight: 500;
-    font-family: "RobotoM", "NotoSansB";
-  }
-
-  p {
-    font-size: 20px;
-    word-break: keep-all;
-
-    span {
-      display: block;
-    }
-  }
-
-  small {
-    font-size: 13px;
-    line-height: 1.25;
-    display: inline-flex;
-    font-family: "NotoSansM";
-  }
-
-  address {
-    font-style: normal;
-  }
-
-  :is(h1, h2, h3, h4, h5, p) {
-    margin: 0;
-  }
-
-  a {
+  &:is(:hover, :focus, .active) {
+    outline: none;
     text-decoration: none;
-    color: #333;
-    display: inline-flex;
-    align-items: center;
-    transition: 0.4s;
+  }
+}
 
-    &:is(:hover, :focus, .active) {
-      outline: none;
-      text-decoration: none;
-    }
+svg {
+  display: flex;
+  fill: #434649;
+}
+
+button {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  font: 600 17px/1 "Pretendard";
+  transition: background 0.2s;
+  cursor: pointer;
+
+  &:disabled {
+    color: darkgray !important;
+    background-color: #eee !important;
+    cursor: default;
   }
 
-  svg {
-    display: flex;
-    fill: #434649;
+  .btn-submit {
+    background-color: $primary-color;
+    color: white;
   }
+}
 
-  button {
-    user-select: none;
-    display: flex;
-    align-items: center;
-    border: 0;
-    padding: 0;
-    background: transparent;
-    border-radius: 0.25rem;
-    white-space: nowrap;
-    font: 14px/1 "Roboto", "NotoSansM";
-    transition: background 0.2s;
-    cursor: pointer;
-
-    &:disabled {
-      color: darkgray !important;
-      background-color: #eee !important;
-      cursor: default;
-    }
-
-    .btn-submit {
-      background-color: $primary-color;
-      color: white;
-    }
-  }
-
-  :is(input, select, button, textarea) {
-    &:focus {
-      outline: 0;
-    }
+:is(input, select, button, textarea) {
+  &:focus {
+    outline: 0;
   }
 }
 
@@ -224,7 +196,7 @@ input {
     border-radius: 3px;
     padding: 0.5rem;
     position: relative;
-    font: 14px/1 "Roboto", "NotoSansM";
+    font: 14px/1 "Pretendard";
   }
 }
 
@@ -238,7 +210,7 @@ textarea {
   border-radius: 0.25rem;
   padding: 0.5rem;
   resize: none;
-  font: 14px/1 "NotoSansM";
+  font: 14px/1 "Pretendard";
 
   &:focus {
     border-color: $primary-color;
@@ -348,6 +320,8 @@ ul {
   display: flex;
   align-items: flex-start;
   gap: 2rem;
+  max-width: calc(100% - 4rem);
+  position: relative;
 }
 
 .image {
@@ -355,6 +329,8 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
+  position: relative;
 }
 
 .texts {
@@ -365,6 +341,7 @@ ul {
 
   > * {
     align-items: flex-start;
+    text-align: left;
   }
 }
 
@@ -524,6 +501,7 @@ header {
   &.content-header {
     p {
       font-size: clamp(16px, 2vw, 18px);
+      align-items: flex-start;
     }
 
     + .tabs {
@@ -543,6 +521,75 @@ header {
           width: 0;
           height: 2px;
           background-color: $primary-color;
+          transform: translateX(-50%);
+          transition: 0.25s;
+        }
+
+        &:hover,
+        &.is-active {
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =====================================================
+   Section
+   ===================================================== */
+section {
+  position: relative;
+  padding: 10rem 0;
+
+  img {
+    max-width: 100%;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 0.75rem;
+
+    h2 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    p {
+      display: flex;
+      flex-direction: column;
+      font-size: 20px;
+      line-height: 1.5;
+      text-align: center;
+    }
+  }
+
+  &.dark {
+    * {
+      color: white;
+    }
+  }
+
+  &.section-tabs {
+    .tabs {
+      gap: 1rem;
+
+      li {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        font-size: clamp(17px, 2vw, 18px);
+
+        &::before {
+          content: "";
+          position: absolute;
+          height: 2px;
+          background-color: $primary-color;
+          width: 0;
+          display: block;
+          left: 50%;
+          bottom: 0;
           transform: translateX(-50%);
           transition: 0.25s;
         }
@@ -618,62 +665,6 @@ main {
       }
     }
   }
-
-  section {
-    position: relative;
-    padding: 10rem 0;
-
-    header {
-      flex-direction: column;
-      gap: 0.75rem;
-
-      h2 {
-        display: flex;
-        flex-direction: column;
-      }
-
-      p {
-        display: flex;
-        flex-direction: column;
-        font-size: 20px;
-        line-height: 1.5;
-        text-align: center;
-      }
-    }
-
-    &.section-tabs {
-      .tabs {
-        gap: 1rem;
-
-        li {
-          height: 60px;
-          display: flex;
-          align-items: center;
-          font-size: clamp(17px, 2vw, 18px);
-
-          &::before {
-            content: "";
-            position: absolute;
-            height: 2px;
-            background-color: $primary-color;
-            width: 0;
-            display: block;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            transition: 0.25s;
-          }
-
-          &:hover,
-          &.is-active {
-            &::before {
-              width: 100%;
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 /* =====================================================
@@ -697,6 +688,10 @@ aside {
    footer
    ===================================================== */
 footer {
+  p {
+    font-size: clamp(14px, 2vw, 16px);
+  }
+
   div {
     display: flex;
     gap: 1rem;
@@ -910,7 +905,6 @@ progress {
 
       &.is-active {
         color: $primary-color;
-        font-family: "RobotoM";
       }
     }
   }
@@ -1127,7 +1121,7 @@ input[type="radio"] {
 
   .input-file-trigger {
     display: block;
-    font: normal 13px/1 "NotoSansM";
+    font: normal 13px/1 "Pretendard";
     padding: 0.5rem;
     border-radius: 0.25rem;
     color: #fff;
@@ -1192,7 +1186,7 @@ input[type="radio"] {
     width: 100%;
     height: $input-height;
     padding: 0 1.5rem 0 1rem;
-    font: 14px/1 "RobotoM", "NotoSansM";
+    font: 14px/1 "Pretendard";
     background-color: transparent;
     color: #333;
     outline: 0;
@@ -1490,7 +1484,7 @@ input[type="radio"] {
     position: absolute;
     top: calc(100% + 0.5rem);
     left: 50%;
-    font: 12px/1.5 "NotoSansM";
+    font: 12px/1.5 "Pretendard";
     transition: opacity 0.25s;
     z-index: -1;
   }
@@ -1573,7 +1567,7 @@ input[type="radio"] {
   background-color: #333;
   color: white;
   text-align: left;
-  font: 12px/1.25 "굴림", "NotoSansM";
+  font: 12px/1.25 "굴림", "Pretendard";
   transform: translate(0, 1rem);
   transition: all 0.2s;
 
@@ -1598,7 +1592,7 @@ input[type="radio"] {
 .scroll-to-top {
   position: fixed;
   bottom: -4rem;
-  right: 2rem;
+  right: 1rem;
   transition: bottom 0.25s;
   width: 3rem;
   height: 3rem;
@@ -1611,7 +1605,7 @@ input[type="radio"] {
   z-index: 100 !important;
 
   &.is-active {
-    bottom: 2rem;
+    bottom: 1rem;
   }
 }
 
@@ -1625,7 +1619,6 @@ input[type="radio"] {
     background: $secondary-color;
     color: #333333;
     font-weight: normal;
-    font-family: "RobotoM";
   }
 
   .ui-datepicker-prev,
@@ -1665,7 +1658,6 @@ input[type="radio"] {
 
   th {
     font-weight: normal;
-    font-family: "RobotoM";
     font-size: 13px;
     color: #939699;
   }
@@ -1681,7 +1673,7 @@ input[type="radio"] {
     html .ui-button.ui-state-disabled:active {
       border: 1px solid #eee;
       background: transparent;
-      font: normal 13px/1 "Roboto";
+      font: normal 13px/1 "Pretendard";
       width: 29px;
       height: 32px;
       border-radius: 3px;
@@ -1693,7 +1685,7 @@ input[type="radio"] {
       border: 1px solid #7682f8;
       background: #f2f1ff;
       color: #333;
-      font-family: "RobotoM";
+      font-family: "Pretendard";
     }
 
     .ui-state-hover,
@@ -1808,6 +1800,72 @@ input[type="radio"] {
   &-pagination {
     display: flex;
     justify-content: center;
+    gap: 0.5rem;
+    bottom: auto;
+    position: relative;
+    color: white;
+    font: 300 20px/1 "Pretendard";
+    transition: background-color 1s;
+
+    &.light-ver {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &-navigation {
+    position: absolute;
+    left: 50%;
+    bottom: 1.75rem;
+    gap: 0.75rem;
+    width: fit-content;
+    height: 32px;
+    padding: 0 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 80px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+
+    button {
+      flex: 0 0 auto;
+      position: relative;
+      opacity: 0.4;
+      background-color: transparent !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 13px;
+      height: 13px;
+      top: auto;
+      left: auto;
+      right: auto;
+      border: 3px solid white;
+      border-left: none;
+      border-bottom: none;
+      transform: rotate(45deg);
+      transition: opacity 0.4s, border-color 2s;
+      z-index: 50;
+
+      &::after {
+        content: none;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:first-of-type {
+        transform: rotate(225deg);
+      }
+
+      &:last-of-type {
+      }
+    }
+
+    &.light-ver {
+      button {
+        border-color: black;
+      }
+    }
   }
 }
 
@@ -2039,5 +2097,31 @@ input[type="radio"] {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(-7px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-7px);
   }
 }

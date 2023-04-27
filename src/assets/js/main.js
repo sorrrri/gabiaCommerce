@@ -195,7 +195,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (questions) {
     const questions = document.querySelectorAll(".question");
     const showLists = (event) => {
-      console.log("YAY");
       let questionIndex = [...questions].indexOf(event.target);
       questions.forEach((question) => {
         const list = question.closest("li");
@@ -245,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   const button = document.querySelector(".section-sticky-button button")
-  container.addEventListener("scroll", () => {
+  button && container.addEventListener("scroll", () => {
     if (container.scrollTop > 50) {
       button.classList.add("is-active")
     } else {

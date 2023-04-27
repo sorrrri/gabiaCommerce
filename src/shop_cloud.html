@@ -1,123 +1,295 @@
 {% extends "base.html" %}
 {% block content %}
-<main class="content-shop cloud">
+<main class="content-shop cloud interactive">
   <header class="content-header">
-    <div class="wrapper">
-      <h1>
-        믿고 쓰는 똑똑한 퍼스트몰
-      </h1>
-      <p>
-        <span>빠르고 안전한 쇼핑몰 관리〮운영 환경을 약속합니다.</span>
-        <span>지금 바로 퍼스트몰로 시작해보세요</span>
-      </p>
-      <button onclick="window.open('https://www.firstmall.kr/register/firstmall?type=P_PREM')">쇼핑몰 만들기</button>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="wrapper">
+            <h1>
+              믿고 쓰는 똑똑한 퍼스트몰
+            </h1>
+            <p>
+              <span>빠르고 안전한 쇼핑몰 관리〮운영 환경을 약속합니다.</span>
+              <span>지금 바로 퍼스트몰로 시작해보세요</span>
+            </p>
+            <button class="arrow" onclick="window.open('https://www.firstmall.kr/register/firstmall?type=P_PREM')">쇼핑몰 만들기</button>
+          </div>
+        </div>
+        <div class="swiper-slide with-hiselling">
+          <div class="wrapper">
+            <h1>
+              <span>판매 채널을 늘려</span>
+              <span>더 많은 고객을 만나보세요</span>
+            </h1>
+            <p>쇼핑몰 통합관리 솔루션 하이셀링 할인 이벤트</p>
+            <button class="arrow" onclick="window.open('https://www.clickn.co.kr/event/withhiselling')">자세히 보기</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-navigation">
+        <button class="swiper-button-next"></button>
+        <div class="swiper-pagination"></div>
+        <button class="swiper-button-prev"></button>
+      </div>
     </div>
   </header>
   <section class="section-intro">
-    <div class="wrapper">
-      <header>
-        <h2>
-          <span>오프라인 매장 관리부터 라이브커머스까지</span>
-          <span>쇼핑몰 운영의 모든 기능을 담았습니다.</span>
-        </h2>
-      </header>
-      <div class="marquee">
-        <ul class="marquee-wrapper" aria-hidden="true">
-          <li>
-            <div class="image">
-              <img src="" alt="">
-            </div>
-            <h3>
-              <span>간편한</span>
-              <span>상품 관리</span>
-            </h3>
-          </li>
-          <li>
-            <div class="image">
-              <img src="" alt="">
-            </div>
-            <h3>
-              <span>손쉬운</span>
-              <span>주문/배송 관리</span>
-            </h3>
-          </li>
-          <li>
-            <div class="image">
-              <img src="" alt="">
-            </div>
-            <h3>
-              <span>체계적인</span>
-              <span>회원 관리</span>
-            </h3>
-          </li>
-          <li>
-            <div class="image">
-              <img src="" alt="">
-            </div>
-            <h3>
-              <span>다양한</span>
-              <span>프로모션 지원</span>
-            </h3>
-          </li>
-          <li>
-            <div class="image">
-              <img src="" alt="">
-            </div>
-            <h3>
-              <span>선물하기</span>
-              <span>기능 지원</span>
-            </h3>
-          </li>
-          <li>
-            <div class="image">
-              <img src="" alt="">
-            </div>
-            <h3>
-              <span>간편한</span>
-              <span>상품 관리</span>
-            </h3>
-          </li>
-          <li>
-            <div class="image">
-              <img src="" alt="">
-            </div>
-            <h3>
-              <span>손쉬운</span>
-              <span>주문/배송 관리</span>
-            </h3>
-          </li>
-          <li>
-            <div class="image">
-              <img src="" alt="">
-            </div>
-            <h3>
-              <span>체계적인</span>
-              <span>회원 관리</span>
-            </h3>
-          </li>
-          <li>
-            <div class="image">
-              <img src="" alt="">
-            </div>
-            <h3>
-              <span>다양한</span>
-              <span>프로모션 지원</span>
-            </h3>
-          </li>
-          <li>
-            <div class="image">
-              <img src="" alt="">
-            </div>
-            <h3>
-              <span>선물하기</span>
-              <span>기능 지원</span>
-            </h3>
-          </li>
-        </ul>
-      </div>
+    <header>
+      <h2>
+        <span>오프라인 매장 관리부터 라이브커머스까지</span>
+        <span>쇼핑몰 운영의 모든 기능을 담았습니다.</span>
+      </h2>
+    </header>
+    <div class="marquee">
+      <ul class="marquee-wrapper" aria-hidden="true">
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_1.png" alt="">
+          </div>
+          <h3>
+            <span>간편한</span>
+            <span>상품 관리</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_2.png" alt="">
+          </div>
+          <h3>
+            <span>손쉬운</span>
+            <span>주문/배송 관리</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_3.png" alt="">
+          </div>
+          <h3>
+            <span>체계적인</span>
+            <span>회원 관리</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_4.png" alt="">
+          </div>
+          <h3>
+            <span>다양한</span>
+            <span>프로모션 지원</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_5.png" alt="">
+          </div>
+          <h3>
+            <span>라이브방송</span>
+            <span>지원</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_6.png" alt="">
+          </div>
+          <h3>
+            <span>선물하기</span>
+            <span>기능 지원</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_7.png" alt="">
+          </div>
+          <h3>
+            <span>오프라인 매장</span>
+            <span>연동</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_8.png" alt="">
+          </div>
+          <h3>
+            <span>정확한</span>
+            <span>통계 자료 제공</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_9.png" alt="">
+          </div>
+          <h3>
+            <span>쇼핑몰앱/</span>
+            <span>관리자앱 제공</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_1.png" alt="">
+          </div>
+          <h3>
+            <span>간편한</span>
+            <span>상품 관리</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_2.png" alt="">
+          </div>
+          <h3>
+            <span>손쉬운</span>
+            <span>주문/배송 관리</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_3.png" alt="">
+          </div>
+          <h3>
+            <span>체계적인</span>
+            <span>회원 관리</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_4.png" alt="">
+          </div>
+          <h3>
+            <span>다양한</span>
+            <span>프로모션 지원</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_5.png" alt="">
+          </div>
+          <h3>
+            <span>라이브방송</span>
+            <span>지원</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_6.png" alt="">
+          </div>
+          <h3>
+            <span>선물하기</span>
+            <span>기능 지원</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_7.png" alt="">
+          </div>
+          <h3>
+            <span>오프라인 매장</span>
+            <span>연동</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_8.png" alt="">
+          </div>
+          <h3>
+            <span>정확한</span>
+            <span>통계 자료 제공</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_9.png" alt="">
+          </div>
+          <h3>
+            <span>쇼핑몰앱/</span>
+            <span>관리자앱 제공</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_1.png" alt="">
+          </div>
+          <h3>
+            <span>간편한</span>
+            <span>상품 관리</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_2.png" alt="">
+          </div>
+          <h3>
+            <span>손쉬운</span>
+            <span>주문/배송 관리</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_3.png" alt="">
+          </div>
+          <h3>
+            <span>체계적인</span>
+            <span>회원 관리</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_4.png" alt="">
+          </div>
+          <h3>
+            <span>다양한</span>
+            <span>프로모션 지원</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_5.png" alt="">
+          </div>
+          <h3>
+            <span>라이브방송</span>
+            <span>지원</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_6.png" alt="">
+          </div>
+          <h3>
+            <span>선물하기</span>
+            <span>기능 지원</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_7.png" alt="">
+          </div>
+          <h3>
+            <span>오프라인 매장</span>
+            <span>연동</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_8.png" alt="">
+          </div>
+          <h3>
+            <span>정확한</span>
+            <span>통계 자료 제공</span>
+          </h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/shop/cloud_intro_9.png" alt="">
+          </div>
+          <h3>
+            <span>쇼핑몰앱/</span>
+            <span>관리자앱 제공</span>
+          </h3>
+        </li>
+      </ul>
     </div>
   </section>
-  <section class="section-only">
+  <section class="section-only dark">
     <div class="wrapper">
       <header>
         <h2>
@@ -128,112 +300,104 @@
       <ul>
         <li>
           <div class="image">
-            <img src="" alt="">
+            <img src="/assets/images/subs/shop/cloud_only_1.png" alt="">
           </div>
-          <div class="texts">
-            <h3>
-              <span>여러 셀러와 함께</span>
-              <span>운영하는 입점형</span>
-            </h3>
-            <p>
-              <span>셀러 전용 관리자 환경을 제공하여</span>
-              <span>여러 명의 셀러와 같이 운영 가능하며</span>
-              <span>쇼핑몰에 발생한 매출 정산까지</span>
-              <span>정확하게 계산됩니다</span>
-            </p>
-          </div>
+          <h3>
+            <span>여러 셀러와</span>
+            <span>함께 운영하는 입점형</span>
+          </h3>
+          <p>
+            <span>셀러 전용 관리자 환경을 제공하여 여러 명의 셀러와</span>
+            <span>같이 운영 가능하며 쇼핑몰에 발생한</span>
+            <span>매출 정산까지 정확하게 계산됩니다</span>
+          </p>
         </li>
         <li>
           <div class="image">
-            <img src="" alt="">
+            <img src="/assets/images/subs/shop/cloud_only_2.png" alt="">
           </div>
-          <div class="texts">
-            <h3>
-              <span>오픈마켓</span>
-              <span></span>
-            </h3>
-            <p>
-              <span>자사몰에 등록된 상품을 오픈마켓에</span>
-              <span>전송하고 오픈마켓에 결제된 주문을</span>
-              <span>자동 수집 등 여러 판매처를</span>
-              <span>한번에 관리 가능합니다</span>
-            </p>
-          </div>
+          <h3>
+            <span>오픈마켓</span>
+            <span>상품/주문 연동</span>
+          </h3>
+          <p>
+            <span>자사몰에 등록된 상품을 오픈마켓에 전송하고</span>
+            <span>오픈마켓에 결제된 주문을 자동 수집 등</span>
+            <span>여러 판매처를 한번에 관리 가능합니다</span>
+          </p>
         </li>
         <li>
           <div class="image">
-            <img src="" alt="">
+            <img src="/assets/images/subs/shop/cloud_only_3.png" alt="">
           </div>
-          <div class="texts">
-            <h3>
-              <span>오프라인 매장</span>
-              <span>POS 연동 지원</span>
-            </h3>
-            <p>
-              <span>하나의 쇼핑몰에 여러 개의</span>
-              <span>오프라인 매장 POS를 연결하여</span>
-              <span>회원/주문/매출을</span>
-              <span>간편하게 한 곳에서 관리하세요</span>
-            </p>
-          </div>
+          <h3>
+            <span>오프라인 매장</span>
+            <span>POS 연동 지원</span>
+          </h3>
+          <p>
+            <span>하나의 쇼핑몰에 여러 개의 오프라인 매장 POS를 연결하여</span>
+            <span>회원/주문/매출을 간편하게 한 곳에서 관리하세요</span>
+          </p>
         </li>
         <li>
           <div class="image">
-            <img src="" alt="">
+            <img src="/assets/images/subs/shop/cloud_only_4.png" alt="">
           </div>
-          <div class="texts">
-            <h3>
-              <span>생동감 넘치는</span>
-              <span>라이브쇼핑</span>
-            </h3>
-            <p>
-              <span>스마트폰 하나로</span>
-              <span>판매부터 소통까지!</span>
-              <span>실시간 방송 송출도 이제</span>
-              <span>자사몰에서 시작하세요</span>
-            </p>
-          </div>
+          <h3>
+            <span>생동감 넘치는</span>
+            <span>라이브쇼핑</span>
+          </h3>
+          <p>
+            <span>스마트폰 하나로 판매부터 소통까지!</span>
+            <span>실시간 방송 송출도 이제 자사몰에서 시작하세요</span>
+          </p>
         </li>
       </ul>
-      <button onclick="window.open('https://www.firstmall.kr/register/firstmall?type=P_PREM')">쇼핑몰 만들기</button>
     </div>
   </section>
   <section class="section-app">
     <div class="wrapper">
       <header>
-        <h2>언제 어디서나 스마트폰 하나로 쇼핑몰 관리 가능합니다</h2>
+        <h2>
+          <span>언제 어디서나 스마트폰 하나로</span>
+          <span>쇼핑몰 관리 가능합니다</span>
+        </h2>
         <p>쇼핑몰 관리자 전용앱을 무료로 제공합니다</p>
       </header>
       <ul>
         <li>
-          <h3>
-            <span>더 빠르게</span>
-            <span>SPEED</span>
-          </h3>
-          <p>
-            <span>실시간 주문/문의 푸시 알림</span>
-            <span>즉각적인 고객 대응</span>
-          </p>
+          <div class="texts">
+            <h3>
+              <span>더 빠르게</span>
+              <span>SPEED</span>
+            </h3>
+            <p>
+              <span>실시간 주문/문의 푸시 알림</span>
+              <span>즉각적인 고객 대응</span>
+            </p>
+          </div>
           <div class="image">
-            <img src="" alt="">
+            <img src="/assets/images/subs/shop/cloud_app_1.png" alt="">
           </div>
         </li>
         <li>
-          <h3>
-            <span>더 안전하게</span>
-            <span>SAFE</span>
-          </h3>
-          <p>
-            <span>실시간 쇼핑몰 관리</span>
-            <span>실시간 상품 상태/노출 변경</span>
-            <span>실시간 주문/반품/환불 확인</span>
-          </p>
+          <div class="texts">
+            <h3>
+              <span>더 안전하게</span>
+              <span>SAFE</span>
+            </h3>
+            <p>
+              <span>실시간 쇼핑몰 관리</span>
+              <span>실시간 상품 상태/노출 변경</span>
+              <span>실시간 주문/반품/환불 확인</span>
+            </p>
+          </div>
           <div class="image">
-            <img src="" alt="">
+            <img src="/assets/images/subs/shop/cloud_app_2.png" alt="">
           </div>
         </li>
       </ul>
-      <div class="buttons">
+      <!-- <div class="buttons">
         <button onclick="window.open('https://play.google.com/store/apps/details?id=kr.firstmall.admin')">
           <img src="" alt="">
         </button>
@@ -241,10 +405,10 @@
           onclick="window.open('https://itunes.apple.com/us/app/%EA%B0%80%EB%B9%84%EC%95%84-%ED%8D%BC%EC%8A%A4%ED%8A%B8%EB%AA%B0-%EA%B4%80%EB%A6%AC%EC%9E%90%EC%95%B1/id1361503547?l=ko&ls=1&mt=8 ')">
           <img src="" alt="">
         </button>
-      </div>
+      </div> -->
     </div>
   </section>
-  <section>
+  <section class="section-payments dark">
     <div class="wrapper">
       <header>
         <h2>
@@ -262,9 +426,8 @@
             <span>가입비 무료</span>
           </h3>
           <p>
-            <span>신용카드, 계좌이체 등</span>
-            <span>쇼핑몰에 꼭 필요한 결제 기능을</span>
-            <span>별도 가입비 없이</span>
+            <span>신용카드, 계좌이체 등 쇼핑몰에 꼭 필요한</span>
+            <span>결제 기능을 별도 가입비 없이</span>
             <span>무료 신청 가능합니다</span>
           </p>
         </li>
@@ -273,14 +436,13 @@
             <img src="" alt="">
           </div>
           <h3>
-            <span>업계 최저 1.3%</span>
             <span>카드 수수료</span>
+            <span>업계 최저 1.3%</span>
           </h3>
           <p>
-            <span>100만 가맹점이 신뢰하는</span>
-            <span>한국정보통신(KICC)와 함께하세요.</span>
-            <span>업계 최저 1.3%로 결제수수료</span>
-            <span>부담을 확 낮췄습니다</span>
+            <span>100만 가맹점이 신뢰하는 한국정보통신(KICC).</span>
+            <span>업계 최저 1.3%로 결제수수료 부담을</span>
+            <span>확 낮췄습니다</span>
           </p>
         </li>
         <li>
@@ -292,14 +454,13 @@
             <span>0.3% 인하</span>
           </h3>
           <p>
-            <span>국내 PG 거래 점율율 1위</span>
-            <span>NHN KCP 신청 시</span>
+            <span>국내 PG 거래 점율율 1위 NHN KCP 신청 시</span>
             <span>기존 카드 수수료 구간에서</span>
             <span>0.3% 할인 적용됩니다</span>
           </p>
         </li>
       </ul>
-      <button onclick="window.open('https://www.firstmall.kr/addservice/pg_internal')">자세히보기</button>
+      <button class="arrow" onclick="window.open('https://www.firstmall.kr/addservice/pg_internal')">자세히보기</button>
     </div>
   </section>
   <section class="section-pricing">
@@ -318,12 +479,12 @@
             <span>이용 가능한 기본 쇼핑몰</span>
           </p>
           <div class="price">
+            <strong>11,000</strong>
+            원/월
             <small>
               <span class="percent">50% 할인</span>
               <s>22,000원/월</s>
             </small>
-            <strong>11,000</strong>
-            원/월
           </div>
         </li>
         <li>
@@ -334,17 +495,41 @@
             <span>오픈마켓형 쇼핑몰</span>
           </p>
           <div class="price">
+
+            <strong>44,000</strong>
+            원/월
             <small>
               <span class="percent">50% 할인</span>
               <s>88,000원/월</s>
             </small>
-            <strong>44,000</strong>
-            원/월
           </div>
         </li>
       </ul>
-      <button onclick="window.open('https://www.firstmall.kr/register/firstmall?type=P_PREM')">자세히보기</button>
     </div>
   </section>
-</main>>
+  <section class="section-sticky-button">
+      <button onclick="window.open('https://www.clickn.co.kr/template')">쇼핑몰 만들기</button>
+  </section>
+  <section></section>
+</main>
+<script>
+  var swiper = new Swiper(".swiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    /*     autoplay: {
+          delay: 2500,
+          disableOnInteraction: false
+        }, */
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
 {% endblock %}

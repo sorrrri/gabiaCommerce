@@ -1,26 +1,66 @@
 @media screen and (max-width: 640px) {
 
   h2 {
-    font-size: 20px;
-  }
-  
-  .wrapper {
-    width: 100%;
   }
 
-  section {
-    flex-wrap: wrap;
+  main {
+
+    section {
+      padding: 5rem 0 !important;
+      overflow: hidden;
+
+      .wrapper {
+        width: 100%;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+
+      p {
+        span {
+          display: contents;
+        }
+      }
+
+      header {
+        order: 0;
+        padding: 0 1rem;
+      }
+
+      ul {
+        li {
+          flex: 1 1 auto;
+
+          .texts, 
+          .images,
+          .image {
+            max-width: 100%;
+          }
+        }
+      }
+    }
 
     .texts {
+      order: 1;
       align-items: center;
       text-align: center;
+      max-width: calc(100% - 2rem);
+    }
+
+    .images,
+    .image {
+      order: 2;
+      max-width: calc(100% - 2rem);
     }
   }
 
   footer {
-
     section {
       padding: 2rem 1rem;
+    }
+
+    .wrapper {
+      max-width: 100%;
     }
 
     .section-benefits {
@@ -28,18 +68,119 @@
     }
 
     .section-sitemap {
-
       .sitemap {
         gap: 1.5rem;
       }
     }
 
     .section-contacts {
-
       .texts {
         flex-basis: 100%;
       }
     }
   }
 
+  .texts {
+    > * {
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  .section-sticky-button {
+    bottom: 1rem;
+
+    button {
+      height: 3.5rem;
+    }
+  }
+
+  .content-header {
+
+    .wrapper {
+      padding: 3rem 1.5rem;
+      justify-content: flex-start;
+    }
+  }
+
+  .content-main {
+    .section-details {
+      .texts {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .content-shop {
+    &.clickn {
+      .section-intro {
+        ul {
+          width: calc(100% - 2rem);
+        }
+      }
+
+      .section-reviews {
+        article {
+          animation: none !important;
+          aspect-ratio: auto;
+        }
+      }
+
+      .section-build {
+        ul {
+          li {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+
+            &:nth-of-type(1) {
+              .image {
+                margin-left: -3rem;
+              }
+            }
+
+            &:nth-of-type(2) {
+              .image {
+                margin-left: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .section-benefits {
+        li {
+          aspect-ratio: auto;
+        }
+
+        .texts {
+          padding: 0;
+        }
+      }
+    }
+
+    &.independent {
+
+      .section-only {
+
+        li {
+          flex-basis: auto;
+        }
+      }
+
+      .section-partners {
+
+        ul {
+          padding: 0 1rem;
+          gap: .5rem
+        }
+
+        li {
+          width: calc(50% - .5rem)
+        }
+      }
+    }
+  }
 }
