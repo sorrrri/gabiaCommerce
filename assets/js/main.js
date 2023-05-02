@@ -256,4 +256,37 @@ document.addEventListener("DOMContentLoaded", () => {
         button.classList.remove("is-active");
       }
     });
+
+  const breakpoint = window.matchMedia("(max-width: 640px)");
+  let smallSwiper;
+
+  const breakpointChecker = () => {
+    if (breakpoint.matches === true) {
+      return enableSwiper();
+    } else if (breakpoint.matches === false) {
+      smallSwiper !== undefined && smallSwiper.destroy(true, true);
+      return;
+    }
+  };
+
+  const enableSwiper = () => {
+    smallSwiper = new Swiper(".swiper.small", {
+      spaceBetween: 20,
+      slidesPerView: 1,
+      loop: true,
+      centeredSlides: true,
+      grabCursor: true,
+      pagination: {
+        el: ".swiper.small .swiper-pagination",
+      },
+      paginationClickable: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+    });
+  };
+
+  breakpoint.addListener(breakpointChecker);
+  breakpointChecker();
 });
