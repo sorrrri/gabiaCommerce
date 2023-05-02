@@ -1,10 +1,10 @@
-@media screen and (max-width: 640px) {
+/** @format */
 
+@media screen and (max-width: 640px) {
   h2 {
   }
 
   main {
-
     section {
       padding: 5rem 0 !important;
       overflow: hidden;
@@ -31,11 +31,34 @@
         li {
           flex: 1 1 auto;
 
-          .texts, 
+          .texts,
           .images,
           .image {
             max-width: 100%;
           }
+        }
+      }
+
+      .swiper {
+        padding: 0 1rem 2rem;
+
+        li {
+          flex: none !important;
+        }
+        
+        &-wrapper {
+          gap: 0;
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+        }
+
+        &-slide {
+          opacity: 1 !important;
+          animation: none !important
+        }
+
+        &-pagination {
+          bottom: -1rem !important;
         }
       }
     }
@@ -55,16 +78,13 @@
   }
 
   header {
-
     .logo {
       width: 140px;
       margin-left: 1rem;
     }
 
     &.header {
-
       nav {
-
         ul {
           display: none;
         }
@@ -116,7 +136,7 @@
       text-align: center;
     }
   }
-  
+
   .section-sticky-button {
     bottom: 1rem;
 
@@ -125,19 +145,17 @@
     }
 
     + section {
-      padding: 1rem !important
+      padding: 1rem !important;
     }
   }
 
   .section-faq {
-
     ul {
-      padding: 0 1rem
+      padding: 0 1rem;
     }
   }
 
   .content-header {
-
     .wrapper {
       padding: 3rem 1.5rem;
       justify-content: flex-start;
@@ -146,7 +164,6 @@
 
   .content-main {
     .section-details {
-
       &:not(:last-of-type) {
         padding-bottom: 0 !important;
       }
@@ -156,7 +173,6 @@
       }
 
       .images {
-
         ul {
           flex-wrap: nowrap;
         }
@@ -164,14 +180,12 @@
     }
 
     .section-different {
-
       .effect {
         transform: none !important;
       }
     }
 
     .section-events {
-
       li {
         padding: 0 1rem;
       }
@@ -181,8 +195,19 @@
   .content-shop {
     &.clickn {
       .section-intro {
+        .swiper {
+          padding: 0 1rem 2rem;
+
+          &-pagination {
+            bottom: -1rem
+          }
+        }
+        
         ul {
-          width: calc(100% - 2rem);
+          li {
+            border-radius: 0.5rem;
+            overflow: hidden;
+          }
         }
       }
 
@@ -218,14 +243,14 @@
       }
 
       .section-icons {
-
         header {
           width: 100%;
           align-items: flex-start;
           padding-left: 2rem;
         }
 
-        p, h3 {
+        p,
+        h3 {
           text-align: left;
         }
 
@@ -240,7 +265,7 @@
         }
 
         .image {
-          order: 0
+          order: 0;
         }
       }
 
@@ -260,24 +285,46 @@
     }
 
     &.cloud {
-
       .section-only {
-
         li {
-          flex-basis: auto;
+          flex: none;
         }
       }
 
       .section-app {
-
-
         li {
-          border: 0 !important
+          gap: 1rem;
+          border: 0 !important;
+          align-items: flex-start;
+        }
+
+        ul {
+          padding: 1.5rem
+        }
+
+        .texts {
+          gap: 0;
+          text-align: left;
+          align-items: flex-start;
+
+          > * {
+            align-items: flex-start;
+            text-align: left;
+          }
         }
 
         .image {
           order: 0;
           width: 100%;
+          flex: 0 0 30vw;
+        }
+      }
+
+      .section-payments {
+        header {
+          .image {
+            display: none;
+          }
         }
       }
     }
@@ -285,36 +332,37 @@
     &.independent {
 
       .section-only {
-
         li {
-          flex-basis: auto;
+          flex-direction: column;
+          padding: 2rem;
+
+          .image {
+            order: 0;
+          }
         }
       }
 
       .section-partners {
-
         ul {
           padding: 0 1rem;
-          gap: .5rem;
+          gap: 0.5rem;
           justify-content: flex-start;
         }
 
         li {
-          width: calc(50% - .25rem)
+          width: calc(50% - 0.25rem);
         }
       }
     }
 
     &.transfer {
-
       .section-intro {
-
         li {
           flex-basis: 45%;
         }
 
         ul {
-          padding: 0 2rem
+          padding: 0 2rem;
         }
 
         .image {
@@ -331,8 +379,19 @@
         }
 
         .image {
-          order: 0
+          order: 0;
         }
+      }
+    }
+  }
+
+  .content-contacts {
+    section {
+      overflow: unset;
+      padding: 2rem 0 !important;
+
+      header {
+        padding: 0;
       }
     }
   }

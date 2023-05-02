@@ -8,8 +8,8 @@
   src: local("Pretendard"), url("../fonts/Pretendard.woff2") format("woff2-variations");
 }
 
-$primary-color: #5048d7;
-$secondary-color: #f2f1ff;
+$primary-color: #0063fd;
+$secondary-color: #0042cf;
 
 $input-height: 45px;
 $input-outline-color: $primary-color;
@@ -91,7 +91,7 @@ p {
 }
 
 small {
-  font-size: 13px;
+  font-size: clamp(13px, 2vw, 15px);
   line-height: 1.25;
   display: inline-flex;
   font-family: "Pretendard";
@@ -196,7 +196,7 @@ input {
     border-radius: 3px;
     padding: 0.5rem;
     position: relative;
-    font: 14px/1 "Pretendard";
+    font: 17px/1 "Pretendard";
   }
 }
 
@@ -234,16 +234,41 @@ article {
   &.details {
     width: 860px;
     padding: 6rem 0 3rem;
+    border-bottom: 1px solid #ddd;
 
     header {
       gap: 1rem;
       padding-bottom: 2rem;
       margin-bottom: 3rem;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #ddd;
     }
 
     p {
+      text-align: left;
       align-items: flex-start;
+    }
+
+    + .buttons {
+      margin: 3rem 0 6rem;
+
+      button {
+        border: 1px solid #ddd;
+        padding: 1rem 3rem;
+        border-radius: 0.5rem;
+        width: min(15rem, 100%);
+        justify-content: center;
+      }
+    }
+  }
+
+  h2 {
+    text-align: left;
+  }
+
+  .tags {
+    span {
+      padding: 5px 10px;
+      font-size: clamp(16px, 2vw, 18px);
     }
   }
 }
@@ -274,7 +299,7 @@ ul {
     content: "*";
     color: tomato;
     position: absolute;
-    left: -10px;
+    left: -12px;
     top: 2px;
   }
 }
@@ -286,7 +311,7 @@ ul {
   span {
     border: 1px solid #e3e6e9;
     padding: 5px;
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -342,6 +367,27 @@ ul {
   > * {
     align-items: flex-start;
     text-align: left;
+  }
+}
+
+.search {
+  display: flex;
+  gap: 1rem;
+
+  input {
+  }
+
+  button {
+    margin-top: 0 !important;
+    padding: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z' fill='black' /%3E%3C/svg%3E")
+      no-repeat center;
+    background-color: transparent !important;
+    background-size: 2rem;
+    width: 45px;
+    height: 45px;
+    margin-left: -4rem;
+    z-index: 10;
   }
 }
 
@@ -509,11 +555,12 @@ header {
 
     + .tabs {
       margin-bottom: 2rem;
+      border-bottom: 1px solid #d3d6d9;
 
       li {
-        line-height: 3;
-        font-size: clamp(16px, 2vw, 18px);
-        padding: 0 1rem;
+        line-height: 2;
+        font-size: clamp(18px, 2vw, 24px);
+        padding: 0 0.5rem;
         position: relative;
 
         &::before {
@@ -524,6 +571,7 @@ header {
           width: 0;
           height: 2px;
           background-color: $primary-color;
+          margin-top: -1px;
           transform: translateX(-50%);
           transition: 0.25s;
         }
@@ -740,14 +788,16 @@ footer {
     display: flex;
     align-items: center;
 
-    :first-child {
+    > :first-child {
       flex: 0 0 100px;
     }
 
-    :last-child {
+    > :last-child {
       flex: 1 1 auto;
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
+      align-items: center;
 
       input {
         flex: 1 1 auto;
@@ -1002,12 +1052,14 @@ progress {
   label {
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap: 5px;
+    line-height: 1.25;
     z-index: 2;
     cursor: pointer;
 
     &::before {
       content: "";
+      flex: 0 0 auto;
       display: inline-block;
       border-radius: 20px;
       width: 20px;
@@ -1789,6 +1841,8 @@ input[type="radio"] {
   }
 }
 .swiper {
+  width: 100%;
+  
   .wrapper {
     min-height: 480px;
     display: flex;
@@ -1819,6 +1873,7 @@ input[type="radio"] {
     position: absolute;
     left: 50%;
     bottom: 1.75rem;
+    transform: translateX(-50%);
     gap: 0.75rem;
     width: fit-content;
     height: 32px;
