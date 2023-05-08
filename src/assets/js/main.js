@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
   const main = document.querySelector("main");
   const header = document.querySelector(".header");
+  const aside = document.querySelector(".aside");
   const scrollToTop = document.createElement("div");
   scrollToTop.classList.add("scroll-to-top");
   container && container.appendChild(scrollToTop);
@@ -53,6 +54,15 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollToTop.addEventListener("click", () => {
     container.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  // Hamburg Menu
+  header.querySelector(".hamburg-menu").addEventListener("click", (event) => {
+    const handler = aside.querySelector(".aside-handler");
+    aside.classList.add("is-active");
+    handler.addEventListener("click", () => {
+      aside.classList.remove("is-active");
+    })
+  })
 
   /* =====================================================
        Tooltip
@@ -257,6 +267,29 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+
+  /* =====================================================
+   Swiper Sliders
+  ===================================================== */
+  var swiper = new Swiper("header .swiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false
+    },
+    loop: true,
+    pagination: {
+      el: "header .swiper-pagination",
+      type: "fraction",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: "header .swiper-button-next",
+      prevEl: "header .swiper-button-prev",
+    },
+  });
+  
   const breakpoint = window.matchMedia("(max-width: 640px)");
   let smallSwiper;
 

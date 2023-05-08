@@ -292,6 +292,16 @@ ul {
   }
 }
 
+.dark {
+  * {
+    color: white;
+  }
+
+  .swiper-pagination-bullet {
+    background: white;
+  }
+}
+
 .asterisk {
   position: relative;
 
@@ -616,12 +626,6 @@ section {
     }
   }
 
-  &.dark {
-    * {
-      color: white;
-    }
-  }
-
   &.section-tabs {
     .tabs {
       gap: 1rem;
@@ -721,19 +725,102 @@ main {
 /* =====================================================
    Aside
    ===================================================== */
-aside {
-  background-color: white;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-direction: column;
-  transition: width 0.25s;
-  ul {
+
+  aside {
+    position: fixed;
+    top: 0;
+    right: -70%;
+    width: 70%;
+    height: 100vh;
+    align-items: flex-start !important;
+    transition: .25s;
+    background-color: white;
     flex-direction: column;
+
+    &.is-active {
+      right: 0
+    }
+
+    a {
+      height: 50px;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    menu {
+      height: 50px;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+
+      &::after {
+        content: "";
+        border: 1px solid #ddd;
+        border-top: 0;
+        border-left: 0;
+        transform: rotate(45deg);
+        width: 12px;
+        height: 12px;
+        display: inline-flex;
+      }
+    }
+
     li {
       flex: 1 1 auto;
+      border-bottom: 1px solid #eee;
+    }
+
+    ul {
+      opacity: 0;
+      visibility: hidden;
+      max-height: 0;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    nav {
+      width: 100%
+    }
+
+    .buttons {
+      padding: 1rem;
+    }
+
+    .aside-handler {
+      width: 3rem;
+      height: 3rem;
+      border: 1px solid #e3e6e9;
+      transition: 0.25s;
+  
+      svg {
+        user-select: none;
+        width: 100%;
+        transition: transform 400ms;
+        cursor: pointer;
+  
+        path {
+          fill: none;
+          transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+          stroke: black;
+          stroke-width: 4;
+          stroke-linecap: round;
+  
+          &:first-of-type {
+            stroke-dasharray: 14 82;
+            stroke-dashoffset: -72px;
+          }
+  
+          &:last-of-type {
+            stroke-dasharray: 14 82;
+            stroke-dashoffset: -72px;
+          }
+        }
+      }
     }
   }
-}
 
 /* =====================================================
    footer
