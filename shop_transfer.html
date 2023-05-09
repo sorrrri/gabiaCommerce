@@ -75,7 +75,7 @@
     <div class="buttons">
       <button>로그인</button>
     </div>
-    <div class="hamburg-menu responsive" data-toggle="hamburg">
+    <div class="hamburg-menu responsive">
       <svg viewBox="0 0 100 100" width="80">
         <path
           d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40">
@@ -88,6 +88,83 @@
     </div>
   </div>
 </header>
+    <aside class="aside responsive">
+  <div class="buttons">
+    <button class="aside-handler">
+      <svg viewBox="0 0 100 100" width="80">
+        <path d="m 30,33 h 40 c 0,0 8.5,-0.68551 8.5,10.375 0,8.292653 -6.122707,9.002293 -8.5,6.625 l -11.071429,-11.071429" />
+        <path d="m 70,50 h -40" />
+        <path d="m 30,67 h 40 c 0,0 8.5,0.68551 8.5,-10.375 0,-8.292653 -6.122707,-9.002293 -8.5,-6.625 l -11.071429,11.071429" />
+      </svg>
+    </button>
+  </div>
+  <nav>
+    <div>
+      <menu>쇼핑몰 창업</menu>
+      <ul>
+        <li class="">
+          <a href="shop_clickn.html">초간편 쇼핑몰</a>
+        </li>
+        <li class="">
+          <a href="shop_cloud.html">클라우드 쇼핑몰</a>
+        </li>
+        <li>
+          <a href="shop_independent.html">독립 쇼핑몰</a>
+        </li>
+        <li>
+          <a href="shop_transfer.html">쇼핑몰 이전</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <menu>제작·운영 의뢰</menu>
+      <ul>
+        <li class="">
+          <a href="custom_shoppingmall.html">쇼핑몰</a>
+        </li>
+        <li class="">
+          <a href="custom_design.html">디자인</a>
+        </li>
+        <li>
+          <a href="custom_agency.html">운영 대행</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <menu>오픈마켓 판매</menu>
+      <ul>
+        <li class="">
+          <a href="openmarket_hiselling.html">쇼핑몰 관리</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <menu>해외 진출</menu>
+      <ul>
+        <li class="">
+          <a href="global_amazon.html">아마존 입점</a>
+        </li>
+        <li class="">
+          <a href="global_alibaba.html">알리바바 입점</a>
+        </li>
+        <li>
+          <a href="global_globalmall.html">해외몰 구축</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <menu>광고·마케팅</menu>
+      <ul>
+        <li class="">
+          <a href="ads_agency.html">광고 대행</a>
+        </li>
+        <li class="">
+          <a href="ads_sns.html">SNS 마케팅</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</aside>
     
 <main class="content-shop transfer">
   <header class="content-header">
@@ -100,7 +177,7 @@
               <span>쉽고 빠르게 무료 이전</span>
             </h1>
             <p>지금 퍼스트몰로 환승하세요!</p>
-            <button class="arrow" onclick="window.open('https://www.firstmall.kr/customer/1to1/write/3')">상담 신청하기</button>
+            <button class="arrow-bg" onclick="window.open('https://www.firstmall.kr/customer/1to1/write/3')">상담 신청하기</button>
           </div>
         </div>
       </div>
@@ -209,57 +286,64 @@
       <header>
         <h2>쇼핑몰 이전 절차</h2>
       </header>
-      <ul>
-        <li>
-          <h3>상담 신청</h3>
-          <div class="image">
-            <img src="/assets/images/subs/shop/transfer_process_1.png" alt="">
-          </div>
-          <p>
-            <span>쇼핑몰 이전 상담을 신청해요.</span>
-            <span>이전과 관련된 궁금한 사항을</span>
-            <span>문의하세요.</span>
-          </p>
-          <a href="https://www.firstmall.kr/customer/1to1/write/3" target="_blank">상담 신청하기</a>
-        </li>
-        <li>
-          <h3>쇼핑몰 신청</h3>
-          <div class="image">
-            <img src="/assets/images/subs/shop/transfer_process_2.png" alt="">
-          </div>
-          <p>
-            <span>쇼핑몰 신청 후</span>
-            <span>디자인, 관리자 설정, 전자결제</span>
-            <span>신청을 진행해 주세요.</span>
-          </p>
-          <a href="https://www.firstmall.kr/addservice/pg_internal" target="_blank">PG 신청하기</a>
-        </li>
-        <li>
-          <h3>데이터 이전 신청</h3>
-          <div class="image">
-            <img src="/assets/images/subs/shop/transfer_process_3.png" alt="">
-          </div>
-          <p>
-            <span>데이터 이전 신청을 해주세요.</span>
-            <span>담당자가 데이터 검수 후, </span>
-            <span>이전을 진행해 드려요.</span>
-          </p>
-          <a href="https://www.firstmall.kr/register/frelocate" target="_blank">데이터 이전 신청하기</a>
-        </li>
-        <li>
-          <h3>검수 및 오픈</h3>
-          <div class="image">
-            <img src="/assets/images/subs/shop/transfer_process_4.png" alt="">
-          </div>
-          <p>
-            <span>데이터 검수가 완료되면</span>
-            <span>쇼핑몰 오픈을 진행해요.</span>
-            <span>도메인 연결 및 네임서버를</span>
-            <span>변경해주세요.</span>
-          </p>
-        </li>
-      </ul>
-      <button class="arrow" onclick="window.open('https://www.firstmall.kr/buildservice/frelocate#frelocate_process')">이전 절차 자세히보기</button>
+      <div class="swiper small">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide">
+            <i>1</i>
+            <h3>상담 신청</h3>
+            <div class="image">
+              <img src="/assets/images/subs/shop/transfer_process_1.png" alt="">
+            </div>
+            <p>
+              <span>쇼핑몰 이전 상담을 신청해요.</span>
+              <span>이전과 관련된 궁금한 사항을</span>
+              <span>문의하세요.</span>
+            </p>
+            <a href="https://www.firstmall.kr/customer/1to1/write/3" target="_blank">상담 신청하기</a>
+          </li>
+          <li class="swiper-slide">
+            <i>2</i>
+            <h3>쇼핑몰 신청</h3>
+            <div class="image">
+              <img src="/assets/images/subs/shop/transfer_process_2.png" alt="">
+            </div>
+            <p>
+              <span>쇼핑몰 신청 후</span>
+              <span>디자인, 관리자 설정, 전자결제</span>
+              <span>신청을 진행해 주세요.</span>
+            </p>
+            <a href="https://www.firstmall.kr/addservice/pg_internal" target="_blank">PG 신청하기</a>
+          </li>
+          <li class="swiper-slide">
+            <i>3</i>
+            <h3>데이터 이전 신청</h3>
+            <div class="image">
+              <img src="/assets/images/subs/shop/transfer_process_3.png" alt="">
+            </div>
+            <p>
+              <span>데이터 이전 신청을 해주세요.</span>
+              <span>담당자가 데이터 검수 후, </span>
+              <span>이전을 진행해 드려요.</span>
+            </p>
+            <a href="https://www.firstmall.kr/register/frelocate" target="_blank">데이터 이전 신청하기</a>
+          </li>
+          <li class="swiper-slide">
+            <i>4</i>
+            <h3>검수 및 오픈</h3>
+            <div class="image">
+              <img src="/assets/images/subs/shop/transfer_process_4.png" alt="">
+            </div>
+            <p>
+              <span>데이터 검수가 완료되면</span>
+              <span>쇼핑몰 오픈을 진행해요.</span>
+              <span>도메인 연결 및 네임서버를</span>
+              <span>변경해주세요.</span>
+            </p>
+          </li>
+        </ul>
+        <div class="swiper-pagination"></div>
+      </div>
+      <button class="arrow-bg" onclick="window.open('https://www.firstmall.kr/buildservice/frelocate#frelocate_process')">이전 절차 자세히보기</button>
     </div>
   </section>
   <section class="section-faq">
@@ -314,25 +398,6 @@
   </section>
   <section></section>
 </main>
-<script>
-  var swiper = new Swiper("header .swiper", {
-    slidesPerView: 1,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false
-    },
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "fraction",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-</script>
 
     <footer>
   <section class="section-benefits">

@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
   const main = document.querySelector("main");
   const header = document.querySelector(".header");
+  const aside = document.querySelector(".aside");
   const scrollToTop = document.createElement("div");
   scrollToTop.classList.add("scroll-to-top");
   container && container.appendChild(scrollToTop);
@@ -52,6 +53,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   scrollToTop.addEventListener("click", () => {
     container.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Hamburg Menu
+  header.querySelector(".hamburg-menu").addEventListener("click", (event) => {
+    const handler = aside.querySelector(".aside-handler");
+    aside.classList.add("is-active");
+    handler.addEventListener("click", () => {
+      aside.classList.remove("is-active");
+    });
   });
 
   /* =====================================================
@@ -144,6 +154,41 @@ document.addEventListener("DOMContentLoaded", () => {
     [...tabContents][0].classList.add("is-active");
     tab.addEventListener("click", showTabContent);
   });
+
+  if (main.classList.contains("content-ads")) {
+    const tabs = document.querySelectorAll(".section-diad .swiper-pagination li");
+
+    if (tabs[0]) {
+      tabs[0].textContent = "다이애드 PRO";
+      tabs[1].textContent = "다이애드 WAVE";
+      tabs[2].textContent = "다이애드 TREND";
+      const background = document.querySelector(".section-diad .background");
+      const slides = document.querySelectorAll(".section-diad  .swiper-slide");
+      const sliderObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.target.classList.contains("pro") && mutation.target.classList.contains("swiper-slide-active")) {
+            background.classList.remove("wave", "trend");
+            background.classList.add("pro");
+          }
+          if (mutation.target.classList.contains("wave") && mutation.target.classList.contains("swiper-slide-active")) {
+            background.classList.remove("pro", "trend");
+            background.classList.add("wave");
+          }
+          if (
+            mutation.target.classList.contains("trend") &&
+            mutation.target.classList.contains("swiper-slide-active")
+          ) {
+            background.classList.remove("wave", "pro");
+            background.classList.add("trend");
+          }
+        });
+      });
+
+      slides.forEach((slide) => {
+        sliderObserver.observe(slide, { attributes: true });
+      });
+    }
+  }
 
   /* =====================================================
          Toggle
@@ -257,6 +302,28 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+  /* =====================================================
+   Swiper Sliders
+  ===================================================== */
+  var swiper = new Swiper("header .swiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+      el: "header .swiper-pagination",
+      type: "fraction",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: "header .swiper-button-next",
+      prevEl: "header .swiper-button-prev",
+    },
+  });
+
   const breakpoint = window.matchMedia("(max-width: 640px)");
   let smallSwiper;
 
@@ -289,4 +356,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   breakpoint.addListener(breakpointChecker);
   breakpointChecker();
+
+  const horizontalSections = document.querySelectorAll(".horizontal");
+  horizontalSections.forEach((section) => {
+    section.addEventListener("scroll", () => {
+      let currentScrollTop = container.scrollTop;
+
+      if (currentScrollTop > lastScrollTop) {
+      } else {
+      }
+      lastScrollTop = currentScrollTop;
+    });
+  });
 });
