@@ -58,8 +58,9 @@ p {
 }
 
 h1 {
-  font-size: clamp(28px, 2.15vw, 32px);
+  font-size: clamp(30px,3.85vw,48px);
   align-items: flex-start;
+  font-weight: 800;
 }
 
 h2 {
@@ -232,16 +233,25 @@ fieldset {
 
 article {
   &.details {
-    width: 860px;
+    width: min(860px, calc(100% - 2rem));
     padding: 6rem 0 3rem;
     border-bottom: 1px solid #ddd;
+
+    h2 {
+      font-size: clamp(24px,3vw,40px);
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
 
     header {
       flex-direction: column;
       align-items: flex-start;
       gap: 1rem;
       padding-bottom: 2rem;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       border-bottom: 1px solid #ddd;
     }
 
@@ -427,11 +437,15 @@ ul {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+
+  &.noscroll {
+    overflow: hidden;
+  }
 }
 
 .wrapper {
   margin: 0 auto;
-  width: 1180px;
+  width: min(calc(100% - 2rem), 1180px);
   position: relative;
 }
 
@@ -680,19 +694,6 @@ main {
   animation: fadeInOpacity 0.4s forwards;
   transition: 0.25s;
 
-  .horizontal {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    &-title {
-      padding-bottom: 0
-    }
-  }
-
   &.interactive {
     section {
       &.is-active {
@@ -746,6 +747,19 @@ main {
           }
         }
       }
+    }
+  }
+
+  .horizontal {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &-title {
+      padding-bottom: 0 !important
     }
   }
 }
