@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   });
+  if (matchMedia("screen and (max-width: 1280px)").matches) {
+    window.addEventListener("resize", () => {
+      location.reload();
+    });
+  }
 
   const container = document.querySelector(".container");
   const main = document.querySelector("main");
@@ -127,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =====================================================
        Tab Menu
   ===================================================== */
-  const tabs = document.querySelectorAll(".tabs li");
+  const tabs = document.querySelectorAll(".tabs [data-tab]");
   const tabContents = document.querySelectorAll(".tab-content");
 
   const showTabContent = (event) => {
@@ -285,6 +290,46 @@ document.addEventListener("DOMContentLoaded", () => {
         entry.target.classList.remove("is-active");
       }
     });
+    if (matchMedia("screen and (min-width: 1281px)").matches) {
+      const horizontalSections = document.querySelectorAll(".horizontal");
+      horizontalSections.forEach((section) => {
+        // 가로스크롤 섹션이 바닥에 닿을때
+        console.log(section.getBoundingClientRect().bottom);
+        const errorRange = section.getBoundingClientRect().bottom - window.innerHeight;
+        if (errorRange < 0 && Math.abs(errorRange) < 30) {
+          container.scrollTo({
+            top: section.offsetTop + section.offsetHeight - window.innerHeight,
+            behavior: "smooth",
+          });
+          container.classList.add("noscroll");
+
+          container.addEventListener("wheel", (event) => {
+            if (container.classList.contains("noscroll")) {
+              // 휠아래로
+              if (event.deltaY > 0) {
+                console.log("right right");
+                section.scrollBy({
+                  left: 30,
+                });
+                // 마우스휠을 아래로 내릴때 마지막 이미지에 닿으면 스크롤 풀림
+                if (window.innerWidth + section.scrollLeft - section.scrollWidth === 0) {
+                  container.classList.remove("noscroll");
+                }
+              } else {
+                console.log("left left");
+                section.scrollBy({
+                  left: -30,
+                });
+                // 마우스휠을 위로 올릴때 첫이미지로 돌아오면 스크롤 복구
+                if (section.scrollLeft === 0) {
+                  container.classList.remove("noscroll");
+                }
+              }
+            }
+          });
+        }
+      });
+    }
   });
 
   const sections = document.querySelectorAll("main.interactive section");
@@ -356,56 +401,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   breakpoint.addListener(breakpointChecker);
   breakpointChecker();
-
-  const horizontalSections = document.querySelectorAll(".horizontal");
-  if (horizontalSections[0]) {
-    horizontalSections.forEach((section) => {
-      container.addEventListener("wheel", () => {
-        // 가로스크롤 섹션이 바닥에 닿을때
-        if (section.getBoundingClientRect().bottom - window.innerHeight < 0) {
-          container.scrollTop = section.offsetTop + section.offsetHeight - window.innerHeight;
-
-          container.style.overflow = "hidden";
-        }
-      });
-
-      section.addEventListener("wheel", (event) => {
-        section.scrollBy({
-          left: event.deltaY < 0 ? -30 : 30,
-        });
-
-        // 가로스크롤 섹션이 바닥에 닿을때
-        if (section.getBoundingClientRect().bottom - window.innerHeight < 0) {
-          container.scrollTop = section.offsetTop + section.offsetHeight - window.innerHeight;
-
-          container.style.overflow = "hidden";
-    
-          console.log(window.innerWidth + event.target.scrollLeft - section.scrollWidth)
-          // 마우스휠을 아래로 내릴때 마지막 이미지에 닿으면 스크롤 풀림
-          if (window.innerWidth + section.scrollLeft - section.scrollWidth === 0) {
-            container.style.overflow = "auto";
-          }
-
-          // 휠아래로
-          if (event.deltaY > 0) {
-            console.log("right right");
-            section.scrollBy({
-              left: 30,
-            });
-    
-            // 마우스휠을 아래로 내릴때 마지막 이미지에 닿으면 스크롤 풀림
-            if (window.innerWidth + section.scrollLeft - section.scrollWidth === 0) {
-              container.style.overflow = "auto";
-            }
-          } else {
-            console.log("left left")
-            // 마우스휠을 위로 올릴때 첫이미지로 돌아오면 스크롤 복구
-            if (section.scrollLeft === 0) {
-              container.style.overflow = "auto";
-            }
-          }
-        }
-      });
-    });
-  }
 });
