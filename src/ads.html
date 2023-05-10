@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-<main class="content-ads interactive">
+<main class="content-ads main interactive">
   <header class="content-header dark">
     <div class="swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide first">
           <div class="wrapper">
-            <h1>기술과 노하우에 기반한 커머스 마케팅</h1>
+            <h1>
+              <span>기술과 노하우에 기반한</span>
+              <span>커머스 마케팅</span>
+            </h1>
             <p>Different ads, 마케팅의 노하우가 다르다</p>
-            <button class="arrow"
+            <button class="arrow-bg"
               onclick="window.open('')">무료체험
               신청하기</button>
           </div>
@@ -21,45 +24,72 @@
       </div>
     </div>
   </header>
-  <section>
+  <section class="section-intro">
     <div class="wrapper">
       <header>
-        <h2>광고 전문가의 차원이 다른 온라인 광고 운영</h2>
+        <h2>
+          <span>광고 전문가의</span>
+          <span>차원이 다른 온라인 광고 운영</span>
+        </h2>
         <p>
           <span>
             광고 매체 가입부터 캠페인 전략 수립, 광고 입찰, 광고 효과 분석까지
           </span>
           <span>
             모든 과정을 가비아커머스에서 직접 진행합니다.
+            <a href="" class="arrow">더보기</a>
           </span>
         </p>
-        <a href="">자세히보기</a>
       </header>
-      <ul class="partners">
-        <li></li>
-      </ul>
-      <ul class="ads">
-        <li>키워드 광고</li>
-        <li>쇼핑 광고</li>
-        <li>배너 광고</li>
-        <li>동영상 광고</li>
-      </ul>
+      <div class="images large">
+        <img src="/assets/images/subs/ads/ads_intro_bg.png" alt="">
+        <img src="/assets/images/subs/ads/ads_intro_1.png" alt="">
+        <img src="/assets/images/subs/ads/ads_intro_2.png" alt="">
+        <img src="/assets/images/subs/ads/ads_intro_3.png" alt="">
+        <img src="/assets/images/subs/ads/ads_intro_4.png" alt="">
+        <img src="/assets/images/subs/ads/ads_intro_5.png" alt="">
+        <img src="/assets/images/subs/ads/ads_intro_6.png" alt="">
+        <img src="/assets/images/subs/ads/ads_intro_7.png" alt="">
+        <img src="/assets/images/subs/ads/ads_intro_8.png" alt="">
+        <img src="/assets/images/subs/ads/ads_intro_9.png" alt="">
+        <img src="/assets/images/subs/ads/ads_intro_10.png" alt="">
+      </div>
+      <div class="image">
+        <img src="/assets/images/subs/ads/ads_intro_all.png" alt="">
+      </div>
     </div>
   </section>
-  <section class="section-sns">
+  <section class="section-sns dark">
     <div class="wrapper">
       <header>
         <h2>고객에게 더 가까이, <strong>SNS 마케팅</strong></h2>
         <p>
           <span>인스타그램·페이스북·블로그 등 네티즌들이 직접 작성하는 다양한 매체를 통해</span>
-          <span>기업이나 기업의 상품을 자발적으로 홍보하도록 유도해 보세요.</span>
+          <span>
+            기업이나 기업의 상품을 자발적으로 홍보하도록 유도해 보세요.
+            <a href="ads_sns.html" class="arrow">더보기</a>
+          </span>
         </p>
-        <a href="">자세히보기</a>
       </header>
       <ul>
-        <li>파워블로거</li>
-        <li>SNS</li>
-        <li>체험단</li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/ads/ads_sns_1.png" alt="">
+          </div>
+          <h3>블로그</h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/ads/ads_sns_2.png" alt="">
+          </div>
+          <h3>SNS</h3>
+        </li>
+        <li>
+          <div class="image">
+            <img src="/assets/images/subs/ads/ads_sns_3.png" alt="">
+          </div>
+          <h3>체험단</h3>
+        </li>
       </ul>
     </div>
   </section>
@@ -67,9 +97,154 @@
     <div class="wrapper">
       <header>
         <h2>
-          <strong>광고 솔루션</strong>으로 효율을 극대화합니다
+          <span>광고 솔루션으로</span>
+          <span>효율을 극대화합니다</span>
+        </h2>
+        <ul class="swiper-pagination menu"></ul>
+      </header>
+      <div class="swiper solutions">
+        <div class="background">
+          <div class="donut"></div>
+        </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide pro">
+            <div class="texts">
+              <div class="image">
+                <img src="/assets/images/subs/ads/ads_diad_4.png" alt="">
+              </div>
+              <h3>자동 입찰 솔루션</h3>
+              <p>
+                <strong>반복되는 입찰 업무, 프로가 알아서 척척</strong>
+                <span>다이애드 프로는 사용자 맞춤형 설정에 따라 자동으로</span>
+                <span>입찰가 변경을 진행합니다</span>
+              </p>
+              <a href="" class="arrow">자세히 보기</a>
+            </div>
+            <div class="image">
+              <img src="/assets/images/subs/ads/ads_diad_1.png" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide wave">
+            <div class="texts">
+              <div class="image">
+                <img src="/assets/images/subs/ads/ads_diad_5.png" alt="">
+              </div>
+              <h3>판매 모니터링 솔루션</h3>
+              <p>
+                <strong>상품 판매량 수집, 이젠 쉽고 편하게</strong>
+                <span>다이애드 웨이브는 내 상품은 물론 경쟁 상품까지 누적</span>
+                <span>판매량, 가격 등 핵심 정보를 자동으로 수집하고 손쉽게</span>
+                <span>조회할 수 있도록 제공합니다</span>
+              </p>
+              <a href="" class="arrow">자세히 보기</a>
+            </div>
+            <div class="image">
+              <img src="/assets/images/subs/ads/ads_diad_2.png" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide trend">
+            <div class="texts">
+              <div class="image">
+                <img src="/assets/images/subs/ads/ads_diad_6.png" alt="">
+              </div>
+              <h3>키워드·트렌드 분석 솔루션</h3>
+              <p>
+                <strong>관심 트렌드를 한 번에</strong>
+                <span>그 상품은 몇 위일까? 최저가는 얼마일까?</span>
+                <span>그 키워드 검색량이 얼마나 될까?</span>
+                <span>상위 노출을 위한 질문들, 트렌드가 답해드립니다.</span>
+              </p>
+              <a href="" class="arrow">자세히 보기</a>
+            </div>
+            <div class="image">
+              <img src="/assets/images/subs/ads/ads_diad_3.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-help dark">
+    <div class="wrapper">
+      <header>
+        <h2>
+          <span>다양한 경험과 노하우를 통해 </span>
+          <span>광고 마케팅을 도와드립니다.</span>
         </h2>
       </header>
+      <div class="swiper small">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide">
+            <div class="image">
+              <img src="/assets/images/subs/ads/ads_help_1.png" alt="">
+            </div>
+            <h3>기술</h3>
+            <p>
+              <span>IT 기술력을 바탕으로 <strong>광고 솔루션인</strong></span>
+              <span><strong>다이애드 시리즈를 자체 개발</strong>하여</span>
+              <span>광고 컨설팅과의 시너지를 창출합니다.</span>
+            </p>
+          </li>
+          <li class="swiper-slide">
+            <div class="image">
+              <img src="/assets/images/subs/ads/ads_help_2.png" alt="">
+            </div>
+            <h3>노하우</h3>
+            <p>
+              <span><strong>디지털 마케팅 전 분야의 광고 전문가</strong>들이 쌓아온</span>
+              <span>노하우를 바탕으로 고객이 성장할 수 있도록</span>
+              <span>지원해드립니다.</span>
+            </p>
+          </li>
+          <li class="swiper-slide">
+            <div class="image">
+              <img src="/assets/images/subs/ads/ads_help_3.png" alt="">
+            </div>
+            <h3>진심</h3>
+            <p>
+              <span>더 이상 혼자 고민하지 마세요.</span>
+              <span><strong>광고는 다이애드 하나로</strong>준비 끝.</span>
+              <span>고객과 비즈니스 여정에 진심으로 동행합니다.</span>
+            </p>
+          </li>
+        </ul>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  <section class="section-partners">
+    <div class="wrapper">
+      <div class="swiper small">
+        <ul class="partners swiper-wrapper">
+          <li class="swiper-slide">
+            <h3>2023년 정부 키워드 광고 협력업체</h3>
+            <div class="image">
+              <img src="/assets/images/subs/ads/ads_partners_1.png" alt="">
+            </div>
+          </li>
+          <li class="swiper-slide">
+            <h3>공영쇼핑, 검색광고 종합 대행사</h3>
+            <div class="image">
+              <img src="/assets/images/subs/ads/ads_partners_2.png" alt="">
+            </div>
+          </li>
+          <li class="swiper-slide">
+            <h3>종합대행사</h3>
+            <div class="images">
+              <img src="/assets/images/subs/ads/ads_partners_3.png" alt="">
+              <img src="/assets/images/subs/ads/ads_partners_4.png" alt="">
+              <img src="/assets/images/subs/ads/ads_partners_5.png" alt="">
+              <img src="/assets/images/subs/ads/ads_partners_6.png" alt="">
+              <img src="/assets/images/subs/ads/ads_partners_7.png" alt="">
+              <img src="/assets/images/subs/ads/ads_partners_8.png" alt="">
+              <img src="/assets/images/subs/ads/ads_partners_9.png" alt="">
+              <img src="/assets/images/subs/ads/ads_partners_10.png" alt="">
+              <img src="/assets/images/subs/ads/ads_partners_11.png" alt="">
+            </div>
+          </li>
+        </ul>
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
   </section>
   <section class="section-contacts">
@@ -78,137 +253,120 @@
         <h2>커머스 마케팅, 도움이 필요한가요?</h2>
         <p>마케팅 전문가들이 직접 답변드립니다.</p>
       </header>
-      <div class="contacts">
-        <a href="tel:1644-4527">1644-4527</a>
-        <button>상담하기</button>
-      </div>
+      <a href="tel:1644-4527">1644-4527</a>
     </div>
   </section>
-  <section class="section-about">
-    <div class="wrapper">
-      <header>
-        <h2>
-          <span>가비아커머스는 기술, 노하우, 진심을 담아</span>
-          <span>다른 광고를 제안합니다</span>
-        </h2>
-      </header>
-      <ul>
-        <li>
-          <h3>원스탑 광고 대행</h3>
-          <p>
-            광고 매체 가입부터 캠페인 전략 수립, 광고 입찰, 광고 효과 분석까지 모든 과정을 처리해드립니다.
-          </p>
-        </li>
-        <li>
-          <h3>광고 전문가 케어</h3>
-          <p>
-            인증받은 마케팅 전문가들이 수준 높은 1:1 케어를 제공합니다. *전 매니저 검색광고 마케터 1등급 자격 보유
-          </p>
-        </li>
-        <li>
-          <h3>정기 마케팅 레터</h3>
-          <p>
-            광고 효과 분석 및 전략, 마케팅 최신 트렌드 분석 등을 정기적으로 보내드립니다.
-          </p>
-        </li>
-      </ul>
-    </div>
+  <section class="section-sticky-button">
+    <button onclick="window.open('')">상담하기</button>
   </section>
-  <section class="section-partners">
-    <div class="wrapper">
-      <header>
-        <h2>
-          <span>다양한 경험과 노하우를 통해 </span>
-          <span>광고 마케팅을 도와드립니다.</span>
-        </h2>
-      </header>
-      <div class="partners">
-
-      </div>
-    </div>
-  </section>
+  <section></section>
   <section class="section-blog">
     <div class="wrapper">
       <header>
         <h2>커머스 마케팅 이야기</h2>
       </header>
-      <div class="list">
-        <a href="더보기">더보기</a>
-        <ul>
-          <li>
-            <div class="image"></div>
-            <h3>블로그 체험단 마케팅으로 고민중인 사장님들께 드리는 글</h3>
+      <div class="list swiper small">
+        <div class="title">
+          <a href="더보기">더보기</a>
+        </div>
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide">
+            <a href="">
+              <div class="image">
+                <img src="/assets/images/subs/ads/ads_blog_1.jpg" alt="">
+              </div>
+              <h3>블로그 체험단 마케팅으로 고민중인 사장님들께 드리는 글</h3>
+            </a>
           </li>
-          <li>
-            <div class="image"></div>
-            <h3>온라인 마케팅 대행사, 어떻게 해야 '돈 값' 할 수 있을까</h3>
+          <li class="swiper-slide">
+            <a href="">
+              <div class="image">
+                <img src="/assets/images/subs/ads/ads_blog_1.jpg" alt="">
+              </div>
+              <h3>온라인 마케팅 대행사, 어떻게 해야 '돈 값' 할 수 있을까</h3>
+            </a>
           </li>
-          <li>
-            <div class="image"></div>
-            <h3>이베이 옥션, 지마켓 광고 어떻게든 성공하는 공식</h3>
+          <li class="swiper-slide">
+            <a href="">
+              <div class="image">
+                <img src="/assets/images/subs/ads/ads_blog_1.jpg" alt="">
+              </div>
+              <h3>이베이 옥션, 지마켓 광고 어떻게든 성공하는 공식</h3>
+            </a>
           </li>
-          <li>
-            <div class="image"></div>
-            <h3>퍼포먼스 마케팅 대행사에서 답답해서 만든 자동입찰 프로그램</h3>
+          <li class="swiper-slide">
+            <a href="">
+              <div class="image">
+                <img src="/assets/images/subs/ads/ads_blog_1.jpg" alt="">
+              </div>
+              <h3>퍼포먼스 마케팅 대행사에서 답답해서 만든 자동입찰 프로그램</h3>
+            </a>
           </li>
         </ul>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
-  <section class="section-why">
-    <div class="wrapper">
-      <h2>가비아커머스는 왜 다를까요?</h2>
-    </div>
-  </section>
-  <section class="section-extension">
+  <section class="section-extensions dark">
     <div class="wrapper">
       <header>
+        <div class="image">
+          <img src="/assets/images/subs/ads/ads_extensions_1.png" alt="">
+        </div>
         <h2>
           <span>가비아커머스가 추천하는</span>
           <span>판매를 촉진시키는 방법</span>
         </h2>
       </header>
-      <ul>
-        <li>
-          <h3>쇼핑몰 창업</h3>
-          <p>
-            <span>클릭만으로 완성되는 초간편 쇼핑몰부터</span>
-            <span>자유롭게 구현하는 맞춤 제작 쇼핑몰까지</span>
-          </p>
-          <a href="">자세히보기</a>
-        </li>
-        <li>
-          <h3>오픈마켓 판매</h3>
-          <p>
-            <span>모든 쇼핑몰을 한 곳에서！</span>
-            <span>상품 소싱부터 재고·상품·주문까지 편리하게 관리하세요</span>
-          </p>
-          <a href="">자세히보기</a>
-        </li>
-        <li>
-          <h3>해외 진출</h3>
-          <p>
-            <span>시장을 해외로 넓혀보세요</span>
-            <span>전 세계가 여러분의 고객이 됩니다.</span>
-          </p>
-          <a href="">자세히보기</a>
-        </li>
-      </ul>
+      <div class="swiper small">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide">
+            <h3>쇼핑몰 창업</h3>
+            <p>
+              <span>클릭만으로 완성되는 초간편 쇼핑몰부터</span>
+              <span>자유롭게 구현하는 맞춤 제작 쇼핑몰까지</span>
+            </p>
+            <a href="" class="arrow">자세히보기</a>
+          </li>
+          <li class="swiper-slide">
+            <h3>오픈마켓 판매</h3>
+            <p>
+              <span>모든 쇼핑몰을 한 곳에서! 상품 소싱부터</span>
+              <span>재고·상품·주문까지 편리하게 관리하세요</span>
+            </p>
+            <a href="" class="arrow">자세히보기</a>
+          </li>
+          <li class="swiper-slide">
+            <h3>해외 진출</h3>
+            <p>
+              <span>글로벌 쇼핑몰 구축과 운영대행, 해외 온라인마켓</span>
+              <span>판매대행까지 글로벌 전문가와 함께 하세요.</span>
+            </p>
+            <a href="" class="arrow">자세히보기</a>
+          </li>
+        </ul>
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
   </section>
 </main>
 <script>
-  var swiper = new Swiper("header .swiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
+  var swiper = new Swiper(".solutions", {
+    fadeEffect: { crossFade: true },
+    virtualTranslate: true,
+    speed: 800,
     autoplay: {
-      delay: 2500,
-      disableOnInteraction: false
+      delay: 3000,
+      disableOnInteraction: false,
     },
     loop: true,
+    effect: "fade",
     pagination: {
-      el: ".swiper-pagination",
+      el: ".menu",
       clickable: true,
+      renderBullet: function (index, className) {
+        return `<li class=${className}>${index + 1}</li>`;
+      },
     },
     navigation: {
       nextEl: ".swiper-button-next",

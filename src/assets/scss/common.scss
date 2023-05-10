@@ -31,12 +31,12 @@ body {
   color: black;
   width: 100%;
   letter-spacing: -1px;
-  font: 600 17px/1 "Pretendard";
+  font: 600 16px/1 "Pretendard";
 }
 
 ul {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
 
   img {
     max-width: 100%;
@@ -237,6 +237,8 @@ article {
     border-bottom: 1px solid #ddd;
 
     header {
+      flex-direction: column;
+      align-items: flex-start;
       gap: 1rem;
       padding-bottom: 2rem;
       margin-bottom: 3rem;
@@ -357,6 +359,12 @@ ul {
   gap: 2rem;
   max-width: calc(100% - 4rem);
   position: relative;
+
+  &.large {
+    + .image {
+      display: none;
+    }
+  }
 }
 
 .image {
@@ -602,7 +610,7 @@ header {
    ===================================================== */
 section {
   position: relative;
-  padding: 10rem 0;
+  padding: 8rem 0;
 
   img {
     max-width: 100%;
@@ -620,7 +628,6 @@ section {
     p {
       display: flex;
       flex-direction: column;
-      font-size: 20px;
       line-height: 1.5;
       text-align: center;
     }
@@ -673,6 +680,19 @@ main {
   animation: fadeInOpacity 0.4s forwards;
   transition: 0.25s;
 
+  .horizontal {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &-title {
+      padding-bottom: 0
+    }
+  }
+
   &.interactive {
     section {
       &.is-active {
@@ -716,6 +736,14 @@ main {
           :nth-child(9) {
             animation-delay: 2.4s;
           }
+
+          :nth-child(10) {
+            animation-delay: 2.6s;
+          }
+
+          :nth-child(11) {
+            animation-delay: 2.8s;
+          }
         }
       }
     }
@@ -726,101 +754,101 @@ main {
    Aside
    ===================================================== */
 
-  aside {
-    position: fixed;
-    top: 0;
-    right: -70%;
-    width: 70%;
-    height: 100vh;
-    align-items: flex-start !important;
-    transition: .25s;
-    background-color: white;
+aside {
+  position: fixed;
+  top: 0;
+  right: -70%;
+  width: 70%;
+  height: 100vh;
+  align-items: flex-start !important;
+  transition: 0.25s;
+  background-color: white;
+  flex-direction: column;
+
+  &.is-active {
+    right: 0;
+  }
+
+  a {
+    height: 50px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  menu {
+    height: 50px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+    &::after {
+      content: "";
+      border: 1px solid #ddd;
+      border-top: 0;
+      border-left: 0;
+      transform: rotate(45deg);
+      width: 12px;
+      height: 12px;
+      display: inline-flex;
+    }
+  }
+
+  li {
+    flex: 1 1 auto;
+    border-bottom: 1px solid #eee;
+  }
+
+  ul {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
     flex-direction: column;
+    gap: 0;
+  }
 
-    &.is-active {
-      right: 0
-    }
+  nav {
+    width: 100%;
+  }
 
-    a {
-      height: 50px;
-      padding: 0 1rem;
-      display: flex;
-      align-items: center;
-    }
+  .buttons {
+    padding: 1rem;
+  }
 
-    menu {
-      height: 50px;
-      padding: 0 1rem;
-      display: flex;
-      align-items: center;
+  .aside-handler {
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid #e3e6e9;
+    transition: 0.25s;
+
+    svg {
+      user-select: none;
       width: 100%;
-      justify-content: space-between;
+      transition: transform 400ms;
+      cursor: pointer;
 
-      &::after {
-        content: "";
-        border: 1px solid #ddd;
-        border-top: 0;
-        border-left: 0;
-        transform: rotate(45deg);
-        width: 12px;
-        height: 12px;
-        display: inline-flex;
-      }
-    }
+      path {
+        fill: none;
+        transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+        stroke: black;
+        stroke-width: 4;
+        stroke-linecap: round;
 
-    li {
-      flex: 1 1 auto;
-      border-bottom: 1px solid #eee;
-    }
+        &:first-of-type {
+          stroke-dasharray: 14 82;
+          stroke-dashoffset: -72px;
+        }
 
-    ul {
-      opacity: 0;
-      visibility: hidden;
-      max-height: 0;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    nav {
-      width: 100%
-    }
-
-    .buttons {
-      padding: 1rem;
-    }
-
-    .aside-handler {
-      width: 3rem;
-      height: 3rem;
-      border: 1px solid #e3e6e9;
-      transition: 0.25s;
-  
-      svg {
-        user-select: none;
-        width: 100%;
-        transition: transform 400ms;
-        cursor: pointer;
-  
-        path {
-          fill: none;
-          transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-          stroke: black;
-          stroke-width: 4;
-          stroke-linecap: round;
-  
-          &:first-of-type {
-            stroke-dasharray: 14 82;
-            stroke-dashoffset: -72px;
-          }
-  
-          &:last-of-type {
-            stroke-dasharray: 14 82;
-            stroke-dashoffset: -72px;
-          }
+        &:last-of-type {
+          stroke-dasharray: 14 82;
+          stroke-dashoffset: -72px;
         }
       }
     }
   }
+}
 
 /* =====================================================
    footer
@@ -982,7 +1010,7 @@ progress {
 
 /* Pagination */
 .pagination {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -1362,7 +1390,6 @@ input[type="radio"] {
 .list {
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
 
   .row.title {
     position: sticky;
@@ -1929,7 +1956,7 @@ input[type="radio"] {
 }
 .swiper {
   width: 100%;
-  
+
   .wrapper {
     min-height: 480px;
     display: flex;
@@ -1945,7 +1972,7 @@ input[type="radio"] {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
-    bottom: auto;
+    bottom: auto !important;
     position: relative;
     color: white;
     font: 300 20px/1 "Pretendard";

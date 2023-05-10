@@ -11,7 +11,7 @@
               <span>쉽고 빠르게 무료 이전</span>
             </h1>
             <p>지금 퍼스트몰로 환승하세요!</p>
-            <button class="arrow" onclick="window.open('https://www.firstmall.kr/customer/1to1/write/3')">상담 신청하기</button>
+            <button class="arrow-bg" onclick="window.open('https://www.firstmall.kr/customer/1to1/write/3')">상담 신청하기</button>
           </div>
         </div>
       </div>
@@ -177,7 +177,7 @@
         </ul>
         <div class="swiper-pagination"></div>
       </div>
-      <button class="arrow" onclick="window.open('https://www.firstmall.kr/buildservice/frelocate#frelocate_process')">이전 절차 자세히보기</button>
+      <button class="arrow-bg" onclick="window.open('https://www.firstmall.kr/buildservice/frelocate#frelocate_process')">이전 절차 자세히보기</button>
     </div>
   </section>
   <section class="section-faq">
@@ -232,23 +232,4 @@
   </section>
   <section></section>
 </main>
-<script>
-  var swiper = new Swiper("header .swiper", {
-    slidesPerView: 1,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false
-    },
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "fraction",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-</script>
 {% endblock %}
