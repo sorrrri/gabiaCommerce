@@ -36,7 +36,44 @@
       </li>
       <li>
         <div class="asterisk">내용</div>
-        <div class="editor"></div>
+        <textarea class="editor" rows="20" cols="20" placeholder="문의 내용을 입력하세요."></textarea>
+      </li>
+      <li class="attach-files">
+        <div>파일첨부</div>
+        <div class="input">
+          <button class="voc-fileinput-button" type="button">첨부파일 추가</button>
+          <small>5개 파일, 총 10 MB까지 첨부 가능합니다. (이미지, 문서, 압축 파일 첨부 가능)</small>
+          <div id="previews" class="files dz-preview dz-file-preview">
+            <span id="dropzone-template">
+              <span class="dropzone-info" data-dz-thumbnail="">
+                <span>
+                  <span data-dz-name=""></span>
+                  <span data-dz-size=""></span>
+                </span>
+                <span class="dz-progress"><span class="dz-upload" data-dz-uploadprogress=""></span></span>
+                <span class="dz-error-message"><span data-dz-errormessage=""></span></span>
+              </span>
+              <span class="actions">
+                <a href="#!" data-dz-remove=""><i class="ico-remove"></i></a>
+              </span>
+            </span>
+            <span class="dropzone-info dz-image-preview" data-dz-thumbnail="">
+              <span>
+                <span data-dz-name="">ico_5.png</span>
+                <span data-dz-size=""><strong>4.8</strong> KB</span>
+              </span>
+              <span class="dz-progress"><span class="dz-upload" data-dz-uploadprogress=""></span></span>
+              <span class="dz-error-message"><span data-dz-errormessage=""></span></span>
+            </span><span class="dropzone-info dz-image-preview" data-dz-thumbnail="">
+              <span>
+                <span data-dz-name="">ico_4.png</span>
+                <span data-dz-size=""><strong>5.2</strong> KB</span>
+              </span>
+              <span class="dz-progress"><span class="dz-upload" data-dz-uploadprogress=""></span></span>
+              <span class="dz-error-message"><span data-dz-errormessage=""></span></span>
+            </span>
+          </div>
+        </div>
       </li>
     </ul>
   </section>

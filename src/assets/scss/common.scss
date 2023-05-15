@@ -65,7 +65,7 @@ h1 {
 
 h2 {
   font-weight: 600;
-  font-size: clamp(28px, 3vw, 40px);
+  font-size: clamp(28px, 4.5vw, 40px);
   line-height: 1.35;
 }
 
@@ -211,7 +211,7 @@ textarea {
   border-radius: 0.25rem;
   padding: 0.5rem;
   resize: none;
-  font: 14px/1 "Pretendard";
+  font: 17px/1 "Pretendard";
 
   &:focus {
     border-color: $primary-color;
@@ -587,7 +587,6 @@ header {
 
     + .tabs {
       margin-bottom: 2rem;
-      border-bottom: 1px solid #d3d6d9;
 
       li {
         line-height: 2;
@@ -1030,6 +1029,10 @@ progress {
   gap: 0.5rem;
   min-height: 24px;
   padding: 1rem 0;
+
+  &:empty {
+    display: none !important;
+  }
 
   > button {
     background-color: #eef2f6;
