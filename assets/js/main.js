@@ -70,68 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =====================================================
-       Tooltip
-  ===================================================== */
-
-  const tooltips = document.querySelectorAll(".tooltip");
-  if (matchMedia("screen and (max-width: 640px)").matches) {
-    tooltips.forEach((tooltip) => {
-      tooltip.addEventListener("click", (event) => {
-        tooltip.classList.toggle("is-active");
-        const content = tooltip.querySelector(".tooltip-content");
-        content.style.top = `${event.clientY}px`;
-      });
-    });
-  }
-
-  const easyTooltips = document.querySelectorAll("[data-tooltip]");
-  if (easyTooltips[0]) {
-    easyTooltips.forEach((tooltip) => {
-      tooltip.addEventListener("mouseover", (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        event.target.parentElement.style.zIndex = "5";
-      });
-    });
-  }
-
-  /* =====================================================
-       Target Smooth Scroll
-  ===================================================== */
-  // 상품 최저가 리포트: 일별 최저가 차트 클릭시
-  const anchors = document.querySelectorAll("a[href^='#']");
-  if (anchors[0]) {
-    anchors.forEach((anchor) => {
-      anchor.addEventListener("click", () => {
-        anchor.getAttribute("href").scrollIntoView({
-          behavior: "smooth",
-        });
-      });
-    });
-  }
-
-  /* =====================================================
-       Input Search Clear Button
-  ===================================================== */
-  // 인풋창에 "x"표시 있을시 clear value
-  const inputs = document.querySelectorAll(".input input");
-  inputs.forEach((input) => {
-    input.addEventListener("keyup", (event) => {
-      const { target } = event;
-      const container = target.closest(".input");
-      const clear = container.querySelector(".x");
-      clear.classList.add("is-active");
-
-      clear.addEventListener("click", () => {
-        clear.classList.remove("is-active");
-        input.value = "";
-      });
-    });
-  });
-
-  /* =====================================================
-       Tab Menu
-  ===================================================== */
+   Tab Menu
+===================================================== */
   const tabs = document.querySelectorAll(".tabs [data-tab]");
   const tabContents = document.querySelectorAll(".tab-content");
 
@@ -196,8 +136,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =====================================================
-         Toggle
-    ===================================================== */
+     Toggle
+===================================================== */
   const toggles = document.querySelectorAll("[data-toggle]");
   const showToggleContent = (event) => {
     event.stopPropagation();
@@ -214,15 +154,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =====================================================
-       Checkbox: Check All
-  ===================================================== */
+   Checkbox: Check All
+===================================================== */
 
   document.querySelectorAll(".checkbox").forEach((checkbox) => {
     checkbox.innerHTML += `
-    <svg width="15px" height="10px">
-      <polyline points="1,5 6,9 14,1"></polyline>
-    </svg>
-    `;
+  <svg width="15px" height="10px">
+    <polyline points="1,5 6,9 14,1"></polyline>
+  </svg>
+  `;
   });
   const checkAll = document.querySelectorAll(".check-all");
   if (checkAll) {
@@ -244,8 +184,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =====================================================
-   Accordion
-  ===================================================== */
+Accordion
+===================================================== */
   const questions = document.querySelector(".accordion");
   if (questions) {
     const questions = document.querySelectorAll(".question");
@@ -348,8 +288,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   /* =====================================================
-   Swiper Sliders
-  ===================================================== */
+Swiper Sliders
+===================================================== */
   var swiper = new Swiper("header .swiper", {
     slidesPerView: 1,
     spaceBetween: 30,
@@ -401,4 +341,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   breakpoint.addListener(breakpointChecker);
   breakpointChecker();
+
+  // Captcha
+  const captchaOptions = document.querySelector(".LBD_CaptchaIconsDiv");
+  captchaOptions && captchaOptions.removeAttribute("style");
 });
