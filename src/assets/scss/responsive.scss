@@ -88,12 +88,36 @@
 }
 
 @media screen and (max-width: 640px) {
-  .swiper-slide {
-    opacity: initial;
-    animation: none;
+
+  .swiper {
+
+    &.small {
+      padding: 0 1rem 2rem;
+
+      li {
+        flex: none !important;
+      }
+
+      .swiper-wrapper {
+        padding: 0;
+        flex-wrap: nowrap;
+        gap: 0 !important;
+        justify-content: flex-start !important;
+      }
+  
+      .swiper-pagination {
+        bottom: -1rem !important;
+      }
+    }
+    
+    &-slide {
+      opacity: initial;
+      animation: none;
+    }
   }
 
   h2 {
+    flex: inline-block;
   }
 
   article {
@@ -104,7 +128,7 @@
 
   main {
     section {
-      padding: 5rem 0 !important;
+      padding: 8vh 0 !important;
       overflow: hidden;
 
       .wrapper {
@@ -112,7 +136,7 @@
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
-        gap: 1rem;
+        gap: 2rem !important;
       }
 
       p {
@@ -127,6 +151,8 @@
       }
 
       ul {
+        padding: 0 1rem;
+
         li {
           flex: 1 1 auto;
 
@@ -137,31 +163,12 @@
           }
         }
       }
-
-      .swiper {
-        padding: 0 1rem 2rem;
-
-        li {
-          flex: none !important;
-        }
-
-        &-wrapper {
-          gap: 0;
-          flex-wrap: nowrap;
-          justify-content: flex-start;
-        }
-
-        &-pagination {
-          bottom: -1rem !important;
-        }
-      }
     }
   }
 
   header {
     .logo {
       width: 140px;
-      margin-left: 1rem;
     }
 
     &.header {
@@ -211,6 +218,25 @@
     display: flex;
   }
 
+  .inputs {
+    padding: 0;
+
+    li {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: .5rem;
+      padding: 1rem 0;
+
+      > :first-child {
+        flex: 1 1 auto;
+      }
+
+      > :last-child {
+        width: 100%;
+      }
+    }
+  }
+
   .texts {
     > * {
       align-items: center;
@@ -248,14 +274,39 @@
   }
 
   .content-header {
+    min-height: auto;
+
     .wrapper {
-      padding: 3rem 1.5rem;
+      padding: 3rem .5rem;
       justify-content: flex-start;
+    }
+  }
+
+  .content-articles {
+
+    .articles {
+
+      li {
+        flex: 1 1 auto;
+      }
+    }
+
+    .texts {
+      align-items: flex-start;
+
+      * {
+        text-align: left;
+      }
+    }
+
+    .image {
+      max-width: 100%;
     }
   }
 
   .content-main {
     .section-details {
+      
       &:not(:last-of-type) {
         padding-bottom: 0 !important;
       }
@@ -266,10 +317,10 @@
 
       .images {
         order: 0;
+      }
 
-        ul {
-          flex-wrap: nowrap;
-        }
+      .wrapper {
+        padding: 0 1rem;
       }
 
       &:nth-of-type(3) {
@@ -298,6 +349,19 @@
         padding: 0 1rem;
       }
     }
+
+    .section-benefits {
+      padding: 8vh 1rem !important;
+
+      .texts{
+        align-items: flex-start;
+        text-align: left;
+
+        h2 {
+          text-align: left;
+        }
+      }
+    }
   }
 
   .content-shop {
@@ -320,9 +384,26 @@
       }
 
       .section-reviews {
+        height: auto;
+        
+        header {
+          position: relative;
+        }
+
         article {
           animation: none !important;
           aspect-ratio: auto;
+        }
+
+        li {
+          flex: none !important;
+          margin-top: 0 !important;
+          padding-top: 0 !important;
+          justify-content: flex-start !important;
+        }
+
+        ul {
+          flex-direction: row;
         }
       }
 
@@ -564,6 +645,42 @@
           border: 1px solid #eee;
           padding: 1.75rem;
           border-radius: 0.5rem;
+        }
+      }
+
+      .section-solutions {
+        padding: 4vh 0 !important;
+
+        .image {
+          right: 4vw;
+          max-width: 30vw;
+        }
+      }
+    }
+
+    &.sns {
+
+      .section-intro {
+
+        ul {
+          gap: 0
+        }
+
+        .image {
+          transform: scale(.85);
+        }
+      }
+
+      .section-methods {
+
+        li {
+          align-items: center;
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+        }
+
+        .wrapper {
+          gap: 5vh
         }
       }
     }

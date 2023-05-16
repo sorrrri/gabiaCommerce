@@ -280,7 +280,7 @@ article {
   .tags {
     span {
       padding: 5px 10px;
-      font-size: clamp(16px, 2vw, 18px);
+      font-size: clamp(17px, 2vw, 18px);
     }
   }
 }
@@ -581,12 +581,12 @@ header {
 
   &.content-header {
     p {
-      font-size: clamp(16px, 2vw, 18px);
+      font-size: clamp(17px, 2vw, 18px);
       align-items: flex-start;
     }
 
     + .tabs {
-      margin-bottom: 2rem;
+      margin: 3rem auto 2rem;
 
       li {
         line-height: 2;
@@ -694,6 +694,24 @@ main {
   transition: 0.25s;
 
   &.interactive {
+
+    &.content-main {
+
+      section {
+        &.is-active {
+
+          header, 
+          ul, 
+          .images,
+          .texts {
+            > * {
+              animation: moveUp 0.4s forwards;
+            }
+          }
+        }
+      }
+    }
+
     section {
       &.is-active {
         header,
@@ -702,7 +720,7 @@ main {
         .texts {
           > * {
             opacity: 0;
-            animation: moveUp 0.4s forwards;
+            animation: fadeInOpacity 0.8s forwards;
           }
 
           :nth-child(2) {
