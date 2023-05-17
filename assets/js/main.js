@@ -69,6 +69,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // menus
+  const navigation = header.querySelector("nav");
+  const subs = header.querySelector(".subs");
+
+  navigation.addEventListener("mouseover", () => {
+    subs.classList.add("is-active");
+  });
+
+  subs.addEventListener("mouseleave", () => {
+    subs.classList.remove("is-active");
+  });
+
   /* =====================================================
    Tab Menu
 ===================================================== */
@@ -291,7 +303,6 @@ Accordion
 Swiper Sliders
 ===================================================== */
   var swiper = new Swiper("header .swiper", {
-    slidesPerView: 1,
     spaceBetween: 30,
     autoplay: {
       delay: 4000,
@@ -324,9 +335,9 @@ Swiper Sliders
   const enableSwiper = () => {
     smallSwiper = new Swiper(".swiper.small", {
       spaceBetween: 20,
-      slidesPerView: 1,
-      loop: true,
+      slidesPerView: "auto",
       centeredSlides: true,
+      loop: true,
       grabCursor: true,
       pagination: {
         el: ".swiper.small .swiper-pagination",
