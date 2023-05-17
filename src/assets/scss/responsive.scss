@@ -57,24 +57,20 @@
   }
 
   .content-shop {
-
     &.clickn {
-      
       .section-reviews {
-
         article {
           align-items: center;
         }
-        
+
         .image {
           order: 0;
         }
       }
 
       .section-build {
-
         .image {
-          order: 0
+          order: 0;
         }
 
         .texts {
@@ -108,9 +104,7 @@
 }
 
 @media screen and (max-width: 640px) {
-
   .swiper {
-
     &.small {
       padding: 0 1rem 2rem;
 
@@ -124,12 +118,12 @@
         gap: 0 !important;
         justify-content: flex-start !important;
       }
-  
+
       .swiper-pagination {
         bottom: -1rem !important;
       }
     }
-    
+
     &-slide {
       opacity: initial;
       animation: none;
@@ -137,7 +131,7 @@
   }
 
   h2 {
-    display: inline-block;
+    display: inline-block !important;
   }
 
   article {
@@ -166,7 +160,7 @@
       }
 
       header {
-        order: 0;
+        order: -1 !important;
         padding: 0 1rem;
       }
 
@@ -246,7 +240,7 @@
     li {
       flex-direction: column;
       align-items: flex-start;
-      gap: .5rem;
+      gap: 0.5rem;
       padding: 1rem 0;
 
       > :first-child {
@@ -270,10 +264,18 @@
     padding: 0 1rem;
   }
 
-  .section-faq {
-    
-    .accordion {
+  .section-extensions {
+    li {
+      flex-wrap: wrap;
+    }
+  }
 
+  .section-faq {
+    ul {
+      padding: 0 1rem;
+    }
+
+    .accordion {
       li {
         padding: 1rem;
       }
@@ -300,12 +302,6 @@
     }
   }
 
-  .section-faq {
-    ul {
-      padding: 0 1rem;
-    }
-  }
-
   .content-header {
     min-height: auto;
 
@@ -318,15 +314,13 @@
     }
 
     .wrapper {
-      padding: 3rem .5rem;
+      padding: 3rem 0.5rem;
       justify-content: flex-start;
     }
   }
 
   .content-articles {
-
     .articles {
-
       li {
         flex: 1 1 auto;
       }
@@ -346,9 +340,7 @@
   }
 
   .content-main {
-
     .section-digital {
-
       .logo {
         display: none;
       }
@@ -358,7 +350,6 @@
       }
 
       ul {
-
         li {
           width: calc(50% - 1rem);
 
@@ -372,11 +363,10 @@
     }
 
     .section-details {
-
       a {
         width: auto;
       }
-      
+
       &:not(:last-of-type) {
         padding-bottom: 0 !important;
       }
@@ -423,7 +413,7 @@
     .section-benefits {
       padding: 8vh 1rem !important;
 
-      .texts{
+      .texts {
         align-items: flex-start;
         text-align: left;
 
@@ -435,11 +425,11 @@
   }
 
   .content-shop {
-
     .section-pricing {
-
+      margin-bottom: 0;
+      
       small {
-        margin-top: .5rem
+        margin-top: 0.5rem;
       }
 
       li {
@@ -472,7 +462,7 @@
 
       .section-reviews {
         height: auto;
-        
+
         header {
           position: relative;
         }
@@ -484,10 +474,10 @@
         }
 
         li {
-          flex: none !important;
           margin-top: 0 !important;
           padding-top: 0 !important;
           justify-content: flex-start !important;
+          width: auto;
         }
 
         ul {
@@ -546,13 +536,19 @@
 
       .section-app {
         li {
-          gap: 1rem;
-          border: 0 !important;
+          gap: .75rem;
           align-items: flex-start;
+          
+          &:first-of-type {
+            border-right: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: .75rem
+          }
         }
 
         ul {
-          padding: 1.5rem;
+          gap: 1rem;
+          padding: 1rem 1.5rem 1rem 1rem;
         }
 
         .texts {
@@ -571,10 +567,13 @@
           width: 100%;
           flex: 0 0 30vw;
         }
+
+        .wrapper {
+          padding: 0 1rem;
+        }
       }
 
       .section-payments {
-
         h2 {
           align-items: center;
         }
@@ -599,7 +598,7 @@
           }
 
           .texts {
-            gap: 0.5rem
+            gap: 0.5rem;
           }
         }
       }
@@ -751,20 +750,17 @@
     }
 
     &.sns {
-
       .section-intro {
-
         ul {
-          gap: 0
+          gap: 0;
         }
 
         .image {
-          transform: scale(.85);
+          transform: scale(0.85);
         }
       }
 
       .section-methods {
-
         li {
           align-items: center;
           margin-top: 0 !important;
@@ -772,7 +768,7 @@
         }
 
         .wrapper {
-          gap: 5vh
+          gap: 5vh;
         }
       }
     }
@@ -806,18 +802,39 @@
           display: flex;
           justify-content: center;
         }
+        
+        .image {
+          aspect-ratio: 1.5/1;
+          overflow: hidden;
+          display: flex;
+          align-items: flex-start;
+        }
+      }
+    }
+
+    &.agency {
+
+      .section-works {
+
+        li {
+          flex-direction: column;
+          width: fit-content;
+        }
+
+        ul {
+          padding: 0
+        }
+
+        .image {
+          order: 0
+        }
       }
     }
   }
 
   .content-openmarket {
-
-
-
     &.hiselling {
-
       .section-easy {
-        
         p {
           align-items: center;
         }
@@ -826,31 +843,28 @@
           flex-direction: column;
           align-items: center;
         }
-        
+
         .image {
-          order: 0
+          order: 0;
         }
       }
 
       .section-sellers {
-
         li {
           margin-top: 0 !important;
-          margin-bottom: 0 !important
+          margin-bottom: 0 !important;
         }
       }
 
       .section-details {
-
         li {
           align-items: center;
         }
       }
 
       .section-pricing {
-
         article {
-          flex: none
+          flex: none;
         }
 
         .swiper {
@@ -866,7 +880,47 @@
         padding-bottom: 0 !important;
 
         .wrapper {
-          gap: 1rem !important
+          gap: 1rem !important;
+        }
+      }
+    }
+  }
+
+  .content-global {
+    &.alibaba {
+
+      .section-intro {
+
+        li {
+          flex: 1 1 25%
+        }
+      }
+
+      .section-pricing {
+        .list {
+          display: none;
+        }
+
+        .swiper {
+          display: block;
+        }
+      }
+
+      .section-membership {
+        header {
+          p {
+            background-position: center top;
+            padding-left: 0;
+            padding-top: 3rem;
+          }
+        }
+
+        li {
+          * {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+          }
         }
       }
     }
