@@ -89,7 +89,6 @@ main {
 }
 
 header {
-  overflow: hidden;
   max-width: 100%;
 }
 
@@ -229,7 +228,7 @@ footer {
     padding: 0 5rem;
     border-radius: 5rem;
     height: 4.5rem;
-    width: min(380px, 80%);
+    width: min(380px, 70%);
     font-size: 24px;
     background: linear-gradient(90deg, $primary-color, $tertiary-color);
     transition: opacity 0.5s;
@@ -380,6 +379,15 @@ footer {
   .section-digital {
     overflow: hidden;
 
+    &.is-active {
+
+      .logo {
+        background-color: black;
+        width: 260px;
+        height: 260px;
+      }
+    }
+
     i {
       position: absolute;
       top: 0.5rem;
@@ -465,11 +473,12 @@ footer {
         }
 
         &.logo {
-          width: 260px;
-          height: 260px;
-          background: black url("../images/logo/logo_wh.png") no-repeat center;
+          width: 200px;
+          height: 200px;
+          background: $primary-color url("../images/logo/logo_wh.png") no-repeat center;
           background-size: 85%;
           z-index: 1;
+          transition: .5s .25s;
 
           &::before {
             content: none;
@@ -708,8 +717,8 @@ footer {
         gap: 0;
 
         li {
-          opacity: 1;
-          animation: none;
+          opacity: 1 !important;
+          animation: none !important;
 
           img {
             transition: 0.75s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.75s;
@@ -1089,6 +1098,62 @@ footer {
     }
   }
 
+  .section-pricing {
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: clamp(24px, 2vw, 26px);
+    }
+
+    p {
+      color: #777;
+    }
+
+    strong {
+      color: $primary-color;
+      font-size: clamp(28px, 3vw, 40px);
+    }
+
+    small {
+      width: 100%;
+      font-size: clamp(17px, 2vw, 18px);
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    s {
+      font-size: clamp(17px, 2vw, 18px);
+      color: #969696;
+    }
+
+    ul {
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    li {
+      flex: 0 0 auto;
+      border: 1px solid #d3d3d3;
+      padding: 3rem;
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: min(380px, 100%);
+    }
+
+    .percent {
+      color: $tertiary-color;
+    }
+
+    .price {
+      margin-top: 3rem;
+      font-size: clamp(17px, 2vw, 18px);
+    }
+  }
+
   &.clickn {
     .swiper {
       &-slide {
@@ -1312,6 +1377,7 @@ footer {
     }
 
     .section-build {
+      padding: 8rem 0 4rem;
       background-color: white;
 
       p {
@@ -1325,11 +1391,6 @@ footer {
         li {
           display: flex;
           justify-content: space-between;
-
-          .texts {
-            padding-top: 3rem;
-          }
-
           &:nth-of-type(1) {
             .image {
               margin-left: -5rem;
@@ -1345,6 +1406,10 @@ footer {
           }
         }
       }
+
+      .texts {
+        padding-top: 3rem;
+      }
     }
 
     .section-icons {
@@ -1355,6 +1420,10 @@ footer {
         align-items: flex-start;
         color: #777;
         font-family: "Pretendard";
+
+        span {
+          text-align: left;
+        }
       }
 
       h2 {
@@ -1412,7 +1481,8 @@ footer {
       }
 
       h3 {
-        font: normal 24px/1.35 "Pretendard";
+        font-size: clamp(20px, 2vw, 24px);
+        font-weight: normal;
         margin-top: 0.5rem;
       }
 
@@ -1511,6 +1581,7 @@ footer {
 
       h3 {
         font-size: clamp(20px, 2vw, 34px);
+        margin-bottom: 0.5rem;
       }
 
       li {
@@ -1568,7 +1639,9 @@ footer {
       }
 
       h3 {
-        font-size: clamp(24px, 2vw, 34px);
+        font-size: clamp(20px, 2vw, 34px);
+        line-height: 1.25;
+        margin-bottom: 0.5rem;
 
         :first-of-type {
           color: #969696;
@@ -1646,66 +1719,8 @@ footer {
       }
     }
 
-    .section-pricing {
-      margin-bottom: 2rem;
-
-      h3 {
-        font-size: clamp(22px, 2vw, 26px);
-      }
-
-      p {
-        color: #777;
-      }
-
-      strong {
-        color: $primary-color;
-        font-size: clamp(28px, 3vw, 40px);
-      }
-
-      small {
-        width: 100%;
-        font-size: clamp(17px, 2vw, 18px);
-        display: flex;
-        gap: 0.5rem;
-        margin-top: 1rem;
-      }
-
-      s {
-        font-size: clamp(17px, 2vw, 18px);
-        color: #969696;
-      }
-
-      ul {
-        justify-content: center;
-        gap: 2rem;
-      }
-
-      li {
-        flex: 0 0 auto;
-        border: 1px solid #d3d3d3;
-        padding: 3rem;
-        border-radius: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        width: min(380px, 100%);
-      }
-
-      .percent {
-        color: $tertiary-color;
-      }
-
-      .price {
-        margin-top: 3rem;
-        font-size: clamp(17px, 2vw, 18px);
-      }
-    }
-
     .section-sticky-button {
       button {
-        width: min(380px, 100%);
-        font-size: 24px;
         background: linear-gradient(90deg, $primary-color, $tertiary-color);
       }
     }
@@ -1738,7 +1753,7 @@ footer {
       }
 
       li {
-        flex: 1 1 calc(50% - 0.5rem);
+        flex: 1 1 calc(50% - 0.75rem);
         padding: 3rem 0;
         display: flex;
 
@@ -1788,7 +1803,7 @@ footer {
 
       li {
         flex: 0 0 auto;
-        width: fit-content;
+        width: fit-content !important;
         box-shadow: 0px 5px 20px 20px rgba(150, 150, 160, 0.1);
       }
 
@@ -1802,67 +1817,7 @@ footer {
 
       li {
         flex: 0 0 auto;
-      }
-    }
-
-    .section-pricing {
-      margin-bottom: 2rem;
-
-      h2 {
-        font-weight: 800;
-      }
-
-      h3 {
-        font-size: clamp(22px, 2vw, 26px);
-      }
-
-      strong {
-        color: $primary-color;
-        font-size: clamp(28px, 3vw, 40px);
-      }
-
-      small {
-        width: 100%;
-        font-size: clamp(17px, 2vw, 18px);
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-        margin-top: 1rem;
-      }
-
-      s {
-        font-size: clamp(17px, 2vw, 18px);
-        color: #969696;
-      }
-
-      ul {
-        justify-content: center;
-        gap: 2rem;
-      }
-
-      li {
-        flex: 0 0 auto;
-        border: 1px solid #d3d3d3;
-        padding: 3rem;
-        border-radius: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        width: min(380px, 100%);
-
-        p {
-          color: #777;
-        }
-      }
-
-      .percent {
-        color: $tertiary-color;
-      }
-
-      .price {
-        margin-top: 3rem;
-        font-size: clamp(17px, 2vw, 18px);
+        width: auto;
       }
     }
   }
@@ -2013,7 +1968,7 @@ footer {
         justify-content: flex-end;
         aspect-ratio: 1/1.37;
 
-        &:nth-of-type(1) {
+        &.first {
           background-image: url("../images/subs/openmarket/hiselling_intro_1.jpg");
           background-color: #ebf1ff;
 
@@ -2022,7 +1977,7 @@ footer {
           }
         }
 
-        &:nth-of-type(2) {
+        &.second {
           background-image: url("../images/subs/openmarket/hiselling_intro_2.jpg");
           background-color: #7774ff;
 
@@ -2031,7 +1986,7 @@ footer {
           }
         }
 
-        &:nth-of-type(3) {
+        &.third {
           background-image: url("../images/subs/openmarket/hiselling_intro_3.jpg");
           background-color: #010066;
 
@@ -2039,6 +1994,10 @@ footer {
             color: #8686c5;
           }
         }
+      }
+
+      .image {
+        order: 0;
       }
     }
 
@@ -2077,7 +2036,7 @@ footer {
     }
 
     .section-knowhow {
-      padding-bottom: 0;
+      padding-bottom: 0 !important;
       background-color: #253340;
       overflow: hidden;
 
@@ -2188,6 +2147,10 @@ footer {
           margin-top: 10vh;
         }
       }
+
+      .image {
+        order: 0
+      }
     }
 
     .section-details {
@@ -2210,17 +2173,21 @@ footer {
         margin-top: 0.75rem;
       }
 
+      li {
+        flex: 0 0 auto;
+        width: min(220px, calc(50% - 1rem));
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       ul {
         max-width: 730px;
         gap: 2rem;
+      }
 
-        li {
-          flex: 0 0 auto;
-          width: min(220px, calc(50% - 0.5rem));
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-        }
+      .image {
+        order: 0;
       }
 
       .wrapper {
@@ -2585,6 +2552,7 @@ footer {
     padding-top: 8vh;
 
     a {
+      padding: 2rem 0 1rem;
       font-size: clamp(28px, 3vw, 40px);
       font-weight: 800;
       color: #0bbe74;
@@ -3226,6 +3194,73 @@ footer {
 }
 
 .content-custom {
+  .section-contacts {
+    padding-top: 8vh;
+
+    a {
+      padding: 2rem 0 1rem;
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 800;
+      color: $primary-color;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+    }
+
+    p {
+      font-size: clamp(20px, 3vw, 24px);
+    }
+  }
+
+  .section-sticky-button {
+    button {
+      background: linear-gradient(90deg, #0036a9, $primary-color);
+    }
+  }
+
+  .section-extensions {
+    background-color: #f4f4f4;
+    padding: 8vh 0;
+
+    a {
+      color: $primary-color;
+
+      &::after {
+        border-color: $primary-color;
+      }
+    }
+
+    p span {
+      font-size: clamp(17px, 2vw, 18px);
+      color: #969696;
+    }
+
+    h3 {
+      font-size: clamp(20px, 3vw, 24px);
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: clamp(28px, 3vw, 34px);
+      margin-bottom: 0;
+    }
+
+    li {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      padding: 2rem;
+      gap: 2rem;
+
+      .image {
+        order: 0;
+      }
+    }
+  }
   &.shoppingmall {
     header {
       .swiper {
@@ -3365,6 +3400,7 @@ footer {
       h3 {
         flex-direction: row;
         gap: 0.5rem;
+        margin-bottom: .5rem;
 
         &::after {
           content: "";
@@ -3469,6 +3505,8 @@ footer {
       li {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        gap: 1rem;
       }
       .image {
         background-color: white;
@@ -3476,6 +3514,106 @@ footer {
         aspect-ratio: 1;
         border-radius: 50%;
       }
+    }
+
+    .section-works {
+      background-color: #253340;
+
+      h3 {
+        font-size: 20px;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 2rem;
+
+        &:after {
+          content: "";
+          width: calc(100% - 2.5rem);
+          height: 3px;
+          background-color: black;
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 4.5rem;
+        }
+      }
+
+      small,
+      h4 {
+        font-size: 18px;
+        color: #969696;
+      }
+
+      h4 {
+        &:not(:first-of-type) {
+          margin-top: 1rem;
+        }
+      }
+
+      p {
+        font-size: clamp(17px, 2vw, 18px);
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+      }
+
+      strong {
+        color: $primary-color;
+      }
+
+      .texts {
+        background-color: white;
+        padding: 2.5rem;
+        width: min(490px, 100%);
+        aspect-ratio: 1.065/1;
+        gap: 5px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .swiper {
+        &-wrapper {
+          flex-wrap: nowrap;
+          justify-content: unset;
+        }
+
+        &-slide {
+          flex: none;
+          display: flex;
+          height: auto;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &-button-prev,
+        &-button-next {
+          opacity: 0.5;
+          border: 2px solid white;
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          transition: opacity 0.25s;
+
+          &::after {
+            color: white;
+            font-size: 1rem;
+          }
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.content-global {
+
+  &.alibaba {
+
+    .section-intro {
+      background: url("../images/subs/global/alibaba_intro_bg.png") center bottom no-repeat
     }
   }
 }

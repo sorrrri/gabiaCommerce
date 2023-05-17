@@ -480,65 +480,48 @@
           <span>퍼스트몰이 여러분의 든든한 파트너가 되어드리겠습니다</span>
         </h2>
       </header>
-      <ul>
-        <li>
-          <h3>프리미엄 Plus</h3>
-          <p>
-            <span>저렴한 월 비용으로</span>
-            <span>이용 가능한 기본 쇼핑몰</span>
-          </p>
-          <div class="price">
-            <strong>11,000</strong>
-            원/월
-            <small>
-              <span class="percent">50% 할인</span>
-              <s>22,000원/월</s>
-            </small>
-          </div>
-        </li>
-        <li>
-          <h3>입점프리미엄 Plus</h3>
-          <p>
-            <span>하나의 쇼핑몰에</span>
-            <span>여러 셀러가 입점 판매 가능한</span>
-            <span>오픈마켓형 쇼핑몰</span>
-          </p>
-          <div class="price">
-
-            <strong>44,000</strong>
-            원/월
-            <small>
-              <span class="percent">50% 할인</span>
-              <s>88,000원/월</s>
-            </small>
-          </div>
-        </li>
-      </ul>
+      <div class="swiper small">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide">
+            <h3>프리미엄 Plus</h3>
+            <p>
+              <span>저렴한 월 비용으로</span>
+              <span>이용 가능한 기본 쇼핑몰</span>
+            </p>
+            <div class="price">
+              <strong>11,000</strong>
+              원/월
+              <small>
+                <span class="percent">50% 할인</span>
+                <s>22,000원/월</s>
+              </small>
+            </div>
+          </li>
+          <li class="swiper-slide">
+            <h3>입점프리미엄 Plus</h3>
+            <p>
+              <span>하나의 쇼핑몰에</span>
+              <span>여러 셀러가 입점 판매 가능한</span>
+              <span>오픈마켓형 쇼핑몰</span>
+            </p>
+            <div class="price">
+  
+              <strong>44,000</strong>
+              원/월
+              <small>
+                <span class="percent">50% 할인</span>
+                <s>88,000원/월</s>
+              </small>
+            </div>
+          </li>
+        </ul>
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
   </section>
   <section class="section-sticky-button">
-      <button onclick="window.open('https://www.clickn.co.kr/template')">쇼핑몰 만들기</button>
+      <button onclick="window.open('https://www.firstmall.kr/register/firstmall?type=P_PREM')">쇼핑몰 만들기</button>
   </section>
   <section></section>
 </main>
-<script>
-  var swiper = new Swiper("header .swiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    /*     autoplay: {
-          delay: 2500,
-          disableOnInteraction: false
-        }, */
-    loop: true,
-    pagination: {
-      el: "header .swiper-pagination",
-      type: "fraction",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: "header .swiper-button-next",
-      prevEl: "header .swiper-button-prev",
-    },
-  });
-</script>
 {% endblock %}

@@ -13,8 +13,7 @@
             <p>
               1인 기업부터 대형쇼핑몰까지 제작 지원
             </p>
-            <button class="arrow-bg" onclick="window.open('https://www.firstmall.kr/customer/1to1/write/11')">상담
-              신청하기</button>
+            <button class="arrow-bg" onclick="window.open('https://www.firstmall.kr/customer/1to1/write/11')">상담하기</button>
           </div>
         </div>
       </div>
@@ -146,13 +145,13 @@
               <img src="/assets/images/subs/custom/shoppingmall_process_1.jpg" alt="">
             </div>
             <div class="texts">
-              <h3>상담 신청</h3>
+              <h3>상담하기</h3>
               <p>
                 <span>쇼핑몰 구축 상담을 신청해요.</span>
                 <span>구축과 관련된 궁금한 사항을</span>
                 <span>문의하세요.</span>
               </p>
-              <a href="https://www.firstmall.kr/customer/1to1/write/11" class="arrow" target="_blank">상담 신청하기</a>
+              <a href="https://www.firstmall.kr/customer/1to1/write/11" class="arrow" target="_blank">상담하기</a>
             </div>
           </li>
           <li class="swiper-slide">
