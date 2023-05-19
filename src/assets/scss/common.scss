@@ -8,8 +8,9 @@
   src: local("Pretendard"), url("../fonts/Pretendard.woff2") format("woff2-variations");
 }
 
-$primary-color: #0063fd;
-$secondary-color: #0042cf;
+$primary-color: #0042cf;
+$secondary-color: #0063fd;
+$tertiary-color: #3399ff;
 
 $input-height: 45px;
 $input-outline-color: $primary-color;
@@ -238,13 +239,35 @@ article {
     padding: 6rem 0 3rem;
     border-bottom: 1px solid #ddd;
 
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: clamp(17px, 2vw, 18px);
+    }
+
     h2 {
-      font-size: clamp(24px, 3vw, 40px);
+      font-size: clamp(24px, 3vw, 36px);
     }
 
     img {
       max-width: 100%;
       height: auto;
+    }
+
+    li {
+      font-size: clamp(17px, 2vw, 18px);
+      line-height: 1.5;
+    }
+    ul {
+      flex-direction: column;
     }
 
     header {
@@ -282,6 +305,10 @@ article {
     span {
       padding: 5px 10px;
       font-size: clamp(17px, 2vw, 18px);
+
+      &:empty {
+        display: none;
+      }
     }
   }
 }
@@ -543,6 +570,16 @@ header {
   flex-wrap: wrap;
   align-items: center;
 
+  .links {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+
+    > :last-child {
+      color: #777
+    }
+  }
+
   &.header {
     min-height: 60px;
 
@@ -550,6 +587,7 @@ header {
       display: flex;
       align-items: center;
       height: 100%;
+      font-size: 18px;
       transition: color 0.25s;
 
       &:hover {
@@ -563,17 +601,8 @@ header {
       height: 100%;
 
       a {
+        justify-content: center;
         width: 120px;
-        justify-content: flex-start;
-      }
-
-      ul {
-        display: flex;
-        gap: 1rem;
-
-        li {
-          white-space: nowrap;
-        }
       }
     }
   }
@@ -587,7 +616,7 @@ header {
     background-color: white;
     transform: translateY(0.5rem);
     transition: 0.25s;
-    padding: 0.5rem 0 2rem;
+    padding: 1rem 0 2rem;
     box-shadow: 0px 5px 10px 0px rgba(100, 110, 120, 0.1);
 
     &.is-active {
@@ -596,12 +625,39 @@ header {
     }
 
     a {
+      justify-content: center;
+      height: 2.25rem;
+      color: #777;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 0;
+        left: 0;
+        bottom: .35rem;
+        height: 1px;
+        background-color: #969696;
+        position: absolute;
+        transition: .25s;
+      }
+      &:hover {
+        color: #969696;
+
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+
+    li {
       width: 120px;
-      height: 2rem;
-      font-size: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .wrapper {
+      justify-content: flex-start;
       padding-left: 300px;
       gap: 0;
     }
@@ -637,7 +693,6 @@ header {
     .wrapper {
       height: 100%;
       display: flex;
-      justify-content: flex-start;
     }
   }
 
@@ -648,11 +703,9 @@ header {
     }
 
     + .tabs {
-      margin: 3rem auto 2rem;
+      gap: 5px;
 
       li {
-        line-height: 2;
-        font-size: clamp(18px, 2vw, 24px);
         padding: 0 0.5rem;
         position: relative;
 
@@ -671,6 +724,8 @@ header {
 
         &:hover,
         &.is-active {
+          color: $primary-color;
+
           &::before {
             width: 100%;
           }
@@ -783,44 +838,10 @@ main {
             animation: fadeInOpacity 0.8s forwards;
           }
 
-          :nth-child(2) {
-            animation-delay: 0.3s;
-          }
-
-          :nth-child(3) {
-            animation-delay: 0.6s;
-          }
-
-          :nth-child(4) {
-            animation-delay: 0.9s;
-          }
-
-          :nth-child(5) {
-            animation-delay: 1.2s;
-          }
-
-          :nth-child(6) {
-            animation-delay: 1.5s;
-          }
-
-          :nth-child(7) {
-            animation-delay: 1.8s;
-          }
-
-          :nth-child(8) {
-            animation-delay: 2.1s;
-          }
-
-          :nth-child(9) {
-            animation-delay: 2.4s;
-          }
-
-          :nth-child(10) {
-            animation-delay: 2.6s;
-          }
-
-          :nth-child(11) {
-            animation-delay: 2.8s;
+          @for $i from 1 through 30 {
+            :nth-child(#{$i + 1}) {
+              animation-delay: 0.3s * $i;
+            }
           }
         }
       }

@@ -427,7 +427,7 @@
   .content-shop {
     .section-pricing {
       margin-bottom: 0;
-      
+
       small {
         margin-top: 0.5rem;
       }
@@ -536,13 +536,13 @@
 
       .section-app {
         li {
-          gap: .75rem;
+          gap: 0.75rem;
           align-items: flex-start;
-          
+
           &:first-of-type {
             border-right: 0;
             border-bottom: 1px solid #ddd;
-            padding-bottom: .75rem
+            padding-bottom: 0.75rem;
           }
         }
 
@@ -802,7 +802,7 @@
           display: flex;
           justify-content: center;
         }
-        
+
         .image {
           aspect-ratio: 1.5/1;
           overflow: hidden;
@@ -813,20 +813,18 @@
     }
 
     &.agency {
-
       .section-works {
-
         li {
           flex-direction: column;
           width: fit-content;
         }
 
         ul {
-          padding: 0
+          padding: 0;
         }
 
         .image {
-          order: 0
+          order: 0;
         }
       }
     }
@@ -888,11 +886,9 @@
 
   .content-global {
     &.alibaba {
-
       .section-intro {
-
         li {
-          flex: 1 1 25%
+          flex: 1 1 25%;
         }
       }
 
@@ -932,6 +928,62 @@
       padding: 2rem 0 !important;
 
       header {
+        padding: 0;
+      }
+    }
+  }
+
+  .content-government-benefits {
+    section {
+      padding: 4vh 0 !important;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .texts:not(header) {
+      align-items: flex-start;
+
+      p {
+        display: inline;
+      }
+
+      * {
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      li {
+        flex: 1;
+
+        &:not(:last-of-type) {
+          padding-right: .5rem;
+        }
+      }
+
+      ul {
+        padding: .5rem;
+        align-items: center;
+        gap: .5rem;
+      }
+    }
+
+    .content-header {
+      min-height: auto;
+
+      .wrapper {
+        padding: 2rem 0
+      }
+    }
+
+    .tabs {
+      li {
+        height: 45px;
+      }
+    }
+
+    .tab-content {
+      .wrapper {
         padding: 0;
       }
     }
